@@ -60,12 +60,13 @@ export const DivFormWrapperContainer = styled.div`
     font-size: 16.8px;
   }
   .heading {
-    font-size: 21px;
+    font-size: 38px;
     font-style: normal;
     font-weight: 600;
     line-height: 26px;
     letter-spacing: 0px;
     text-align: center;
+    margin-top: 90px;
   }
   .sub-heading {
     font-size: 17px;
@@ -99,4 +100,12 @@ export const DivCloseIcon = styled.div<{ isMobile?: boolean }>`
   top: 10px;
   right: 10px;
   ${({ isMobile }) => `${isMobile && `top: calc(50vh + 20px);;`}`};
+`;
+
+export const DivLayout = styled.div<{ isMobile?: boolean }>`
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
 `;

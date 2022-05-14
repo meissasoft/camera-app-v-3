@@ -21,5 +21,4 @@ describe('Auth redux state tests', () => {
     const state = auth(initialState, action);
     expect(state.isAuthenticated).toEqual(false);
   });
-
 });

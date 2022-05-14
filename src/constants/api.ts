@@ -3,5 +3,5 @@ export const REQUEST_HEADERS = {
   Accept: 'application/json',
 };
 
-export const API_URL = 'https://api.dev.nearlogin.io';
-export const API_SIGNIN = '/users/login';
+export const API_URL = '';
+export const API_SIGNIN = '';

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import HomePage from './login/index.page';
-
+import HomePage from './home/index.page';
+import 'bootstrap/dist/css/bootstrap.min.css';
 /**
  *
  * @returns Landing page
