@@ -8,12 +8,10 @@ import { BoxStyled, DivFormWrapperContainer, DivLayout } from './index.styles';
 const Home = () => {
   return (
     <div>
-      <BoxStyled >
+      <BoxStyled>
         <DivFormWrapperContainer>
           <DivLayout>
-            <h3 className="heading">
-              Video KYC
-            </h3>
+            <h3 className="heading">Video KYC</h3>
             <Button>Get Started</Button>
           </DivLayout>
         </DivFormWrapperContainer>

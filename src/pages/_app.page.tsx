@@ -14,11 +14,11 @@ import '../styles/global.scss';
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <Component {...pageProps} />
-          </PersistGate>
-        </Provider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Component {...pageProps} />
+        </PersistGate>
+      </Provider>
     </QueryClientProvider>
   );
 }
