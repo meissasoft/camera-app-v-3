@@ -1,6 +1,6 @@
 import Button from '@/components/core/Button';
 
-import { LoginStyled, DivFormWrapperContainer, DivLayout } from './index.styles';
+import { BoxStyled, DivFormWrapperContainer, DivLayout } from './index.styles';
 /**
  *
  * @returns Home page
@@ -8,16 +8,16 @@ import { LoginStyled, DivFormWrapperContainer, DivLayout } from './index.styles'
 const Home = () => {
   return (
     <div>
-      <LoginStyled data-testid="login-container">
+      <BoxStyled >
         <DivFormWrapperContainer>
           <DivLayout>
-            <h3 className="heading" data-testid="heading">
+            <h3 className="heading">
               Video KYC
             </h3>
             <Button>Get Started</Button>
           </DivLayout>
         </DivFormWrapperContainer>
-      </LoginStyled>
+      </BoxStyled>
     </div>
   );
 };
