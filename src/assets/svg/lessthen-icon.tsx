@@ -6,3 +6,4 @@ export const LessThenIcon = () => (
     />
   </svg>
 );
+export default LessThenIcon;

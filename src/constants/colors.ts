@@ -2,6 +2,8 @@ export const COLORS = {
   BLACK_100: '#000',
   BLUE_100: '#0ea5e9',
   BLUE_150: '#587BE0',
+  SKY_100: '#38A1F7',
+  FAUX_CHINESE_BLUE: '#38568F',
   WHITE_100: '#fff',
   GREY_90: '#04040440',
   RED_100: '#C94040',
