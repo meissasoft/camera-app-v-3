@@ -1,7 +1,7 @@
 import Button from '@/components/core/Button';
 import { Heading } from '@/components/core/Header/Header';
 
-import { HeaderStyled, BoxStyled, DivFormWrapperContainer } from './index.styles';
+import { BoxStyled } from './index.styles';
 
 /**
  *
