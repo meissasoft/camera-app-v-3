@@ -17,8 +17,12 @@ const ChooseLangugae = () => {
   const router = useRouter();
   const [langugaes, setLanguages] = useState<ILanguage[]>([
     {
-      name: 'Hindi',
+      name: 'English',
       isActive: true,
+    },
+    {
+      name: 'Hindi',
+      isActive: false,
     },
     {
       name: 'Telugu',
@@ -69,6 +73,10 @@ const ChooseLangugae = () => {
     setSelectedLanguage(langugaes[ind]);
   };
 
+  const handleContinue = () => {
+    router.push('/verification');
+  };
+
   return (
     <>
       <BoxStyled>
@@ -78,7 +86,7 @@ const ChooseLangugae = () => {
             <>
               <Row onClick={() => onClickItem(ind)}>
                 <div className="col-11">
-                  <StyledLanguage>{name}</StyledLanguage>
+                  <StyledLanguage isActive={isActive}>{name}</StyledLanguage>
                 </div>
                 <div className="col-1">{isActive && <TickIcon />}</div>
               </Row>
@@ -87,7 +95,7 @@ const ChooseLangugae = () => {
           ))}
         </div>
       </BoxStyled>
-      <Button>Continue</Button>
+      <Button onClick={handleContinue}>Continue</Button>
     </>
   );
 };

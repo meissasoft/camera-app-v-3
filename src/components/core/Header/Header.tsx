@@ -2,7 +2,7 @@ import React from 'react';
 
 import LessThenIcon from '@/assets/svg/lessthen-icon';
 
-import { StyledText } from './Header.style';
+import { DivHeader, StyledText } from './Header.style';
 import { IHeaderProps } from './Header.types';
 
 function Header({ text, onClick }: IHeaderProps) {
@@ -12,8 +12,8 @@ function Header({ text, onClick }: IHeaderProps) {
     }
   };
   return (
-    <div className="container">
-      <div className="row">
+    <DivHeader className="container">
+      <div className="row flex">
         <div className="col-2" onClick={onIconCLick}>
           <LessThenIcon />
         </div>
@@ -22,7 +22,7 @@ function Header({ text, onClick }: IHeaderProps) {
         </div>
         <div className="col-2"></div>
       </div>
-    </div>
+    </DivHeader>
   );
 }
 
