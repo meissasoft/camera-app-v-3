@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-import TextField from '@mui/material/TextField';
 
 import { COLORS } from '@/constants/colors';
 
-export const FieldInputStyled = styled(TextField)`
+export const FieldInputStyled = styled.div`
   width: 100%;
   color: ${COLORS.GREY_TEXT};
   &.MuiTextField-root > div {
