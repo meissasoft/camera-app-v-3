@@ -1,4 +1,5 @@
 import StepLayout from '@/components/StepsLayout';
+
 import { DivMain } from './index.styles';
 
 /**
