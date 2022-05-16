@@ -8,6 +8,7 @@ import '@fontsource/inter';
 import { queryClient } from '@/utils/queryClient';
 
 import store, { persistor } from '../store';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.scss';
 
 // This default export is required in a new `pages/_app.js` file.

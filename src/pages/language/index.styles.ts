@@ -1,12 +1,7 @@
 import styled from '@emotion/styled';
 
 export const BoxStyled = styled.div`
-  display: flex;
-  position: relative;
   padding: 40px 20px;
-  .container {
-    height: 100vh;
-  }
 `;
 
 export const DivFormWrapperContainer = styled.div`
@@ -22,11 +17,12 @@ export const DivFormWrapperContainer = styled.div`
     margin-top: 90px;
   }
 `;
+export const HeaderStyled = styled.div`
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
 
-export const DivLayout = styled.div<{ isMobile?: boolean }>`
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  justify-content: space-between;
+  text-align: center;
+  color: #000000;
 `;
