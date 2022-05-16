@@ -1,7 +1,5 @@
 import { ChangeEventHandler } from 'react';
 
-import { TextFieldProps } from '@mui/material/TextField';
-
 export type IInputProps = {
   name: string;
   id?: string;
@@ -10,4 +8,4 @@ export type IInputProps = {
   placeholder?: string;
   type?: string;
   InputProps?: any;
-} & TextFieldProps;
+};
