@@ -6,7 +6,7 @@ import { TickIcon } from '@/assets/svg/tick-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
-import { BoxStyled, StyledLine, StyledLanguage, Row } from './index.styles';
+import { BoxStyled, StyledLine, StyledLanguage, Row, DivMain } from './index.styles';
 import { ILanguage } from './index.types';
 
 /**
@@ -78,7 +78,7 @@ const ChooseLangugae = () => {
   };
 
   return (
-    <>
+    <DivMain>
       <BoxStyled>
         <Header text="Choose a Language" onClick={onClickHeaderIcon} />
         <div className="container" style={{ marginTop: 20 }}>
@@ -96,7 +96,7 @@ const ChooseLangugae = () => {
         </div>
       </BoxStyled>
       <Button onClick={handleContinue}>Continue</Button>
-    </>
+    </DivMain>
   );
 };
 

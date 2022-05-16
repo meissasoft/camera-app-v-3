@@ -2,8 +2,12 @@ import styled from '@emotion/styled';
 
 import { COLORS } from '@/constants/colors';
 
+export const DivMain = styled.div`
+  padding: 20px;
+`;
+
 export const BoxStyled = styled.div`
-  padding: 40px 20px;
+  padding: 20px 0px;
   list-group-item: list-group-item-action;
   font-family: 'Proxima Nova';
 `;

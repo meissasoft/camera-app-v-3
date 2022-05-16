@@ -1,4 +1,5 @@
 import StepLayout from '@/components/StepsLayout';
+import { DivMain } from './index.styles';
 
 /**
  *
@@ -7,7 +8,7 @@ import StepLayout from '@/components/StepsLayout';
 
 const Verification = () => {
   return (
-    <div>
+    <DivMain>
       <StepLayout
         rightIcon="arrow"
         step={1}
@@ -28,7 +29,7 @@ const Verification = () => {
         content="Take a picture of an identity document and upload it for verification"
         isDisabled={true}
       />
-    </div>
+    </DivMain>
   );
 };
 
