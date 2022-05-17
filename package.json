@@ -16,6 +16,7 @@
     "moment": "^2.29.1",
     "nanoid": "^3.3.1",
     "next": "latest",
+    "next-i18next": "^11.0.0",
     "react": "^17.0.2",
     "react-avatar": "^4.0.0",
     "react-bootstrap": "^2.4.0",
