@@ -4,7 +4,6 @@ import { QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import '@fontsource/inter';
 import { queryClient } from '@/utils/queryClient';
 
 import store, { persistor } from '../store';
