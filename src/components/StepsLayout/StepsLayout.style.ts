@@ -10,7 +10,7 @@ export const DivStepLayout = styled.div<{ disabled: boolean }>`
     cursor: not-allowed;`
       : ``}
   box-sizing: border-box;
-  padding: 20px;
+  padding: 15px;
   margin: 20px 0px;
   width: 100%;
   min-height: 98px;
@@ -36,7 +36,7 @@ export const DivStepLayout = styled.div<{ disabled: boolean }>`
 `;
 
 export const DivHeading = styled.div`
-  padding: 10px 0px 10px 0;
+  padding: 5px 0px 5px 0;
 
   font-style: normal;
   font-weight: 600;
@@ -81,8 +81,7 @@ export const DivStep = styled.div`
 `;
 
 export const DivIcon = styled.div`
-  margin-left: 30px;
-  width: 30px;
+  width: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;

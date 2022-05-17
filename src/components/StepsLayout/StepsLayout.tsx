@@ -9,8 +9,8 @@ import { StepsLayoutProps } from './StepsLayout.types';
 function StepLayout({ step, content, isDisabled = false, heading, rightIcon, onClick }: StepsLayoutProps) {
   return (
     <DivStepLayout disabled={isDisabled} onClick={onClick}>
-      <div className="row d-flex">
-        <div className="col-7">
+      <div className=" d-flex">
+        <div className="col-11">
           <DivLabel>
             <DivStep>step{step}</DivStep>
           </DivLabel>
@@ -18,7 +18,7 @@ function StepLayout({ step, content, isDisabled = false, heading, rightIcon, onC
           <DivContent>{content}</DivContent>
         </div>
         <DivIcon>
-          <div className="col-5 divIcon">
+          <div className="col-1 divIcon">
             {rightIcon === 'done' ? <DoneIcon isDisabled={isDisabled} /> : <ArrowRight isDisabled={isDisabled} />}
           </div>
         </DivIcon>

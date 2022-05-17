@@ -10,6 +10,7 @@ interface IButtonProps {
   name?: string;
   backgroundColor?: string;
   hoverColor?: string;
+  isBottom?: boolean;
 }
 
 /**

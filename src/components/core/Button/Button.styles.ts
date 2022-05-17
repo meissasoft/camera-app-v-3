@@ -2,8 +2,12 @@ import styled from '@emotion/styled';
 
 import { COLORS } from '@/constants/colors';
 
-export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor?: string; isLogin?: boolean }>`
-  position: absolute;
+export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor?: string; isBottom?: boolean }>`
+  position: ${({ isBottom }) =>
+    isBottom
+      ? `inherit;
+    `
+      : 'absolute'};
   bottom: 20px;
   left: 0px;
   right: 0px;
@@ -42,13 +46,4 @@ export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor
   &:hover {
     background-image: linear-gradient(to right, #38568f 0%, #38a1f7 90%, #38568f 90%);
   }
-
-  ${({ isLogin }) =>
-    isLogin
-      ? `background: linear-gradient(90deg, ${COLORS.FAUX_CHINESE_BLUE} 0%, ${COLORS.SKY_100} 35%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;`
-      : ''};
 `;
