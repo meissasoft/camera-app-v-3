@@ -9,7 +9,7 @@ import { BoxStyled, DivFormWrapperContainer, DivLayout } from './index.styles';
  */
 const Home = () => {
   const handleCrossIconClick = () => {
-    router.push('/language');
+    router.push('/getStarted');
   };
   return (
     <>

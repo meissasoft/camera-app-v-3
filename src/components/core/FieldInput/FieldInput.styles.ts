@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 
 import { COLORS } from '@/constants/colors';
 
-export const FieldInputStyled = styled.div`
+export const FieldInputStyled = styled.input`
   width: 100%;
+  height: 50px;
   color: ${COLORS.GREY_TEXT};
   &.MuiTextField-root > div {
     height: 50px;
