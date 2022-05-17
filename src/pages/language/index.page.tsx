@@ -6,7 +6,7 @@ import { TickIcon } from '@/assets/svg/tick-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
-import { BoxStyled, StyledLine, StyledLanguage, Row, DivMain } from './index.styles';
+import { StyledLine, StyledLanguage, Row, DivMain } from './index.styles';
 import { ILanguage } from './index.types';
 
 /**
