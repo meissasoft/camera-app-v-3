@@ -12,16 +12,16 @@ const Home = () => {
     router.push('/language');
   };
   return (
-    <div>
+    <>
       <BoxStyled>
         <DivFormWrapperContainer>
           <DivLayout>
             <h3 className="heading">Video KYC</h3>
-            <Button onClick={handleCrossIconClick}>Get Started</Button>
           </DivLayout>
         </DivFormWrapperContainer>
       </BoxStyled>
-    </div>
+      <Button onClick={handleCrossIconClick}>Get Started</Button>
+    </>
   );
 };
 
