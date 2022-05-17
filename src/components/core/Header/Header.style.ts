@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const StyledText = styled.div`
-  
   font-style: normal;
   font-weight: 600;
   font-size: 21px;

@@ -38,14 +38,12 @@ export const DivStepLayout = styled.div<{ disabled: boolean }>`
 export const DivHeading = styled.div`
   padding: 10px 0px 10px 0;
 
-  
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
 `;
 export const DivContent = styled.div`
-  
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -65,7 +63,6 @@ export const DivLabel = styled.div`
   border-radius: 5px;
 `;
 export const DivStep = styled.div`
-  
   font-style: normal;
   font-weight: 600;
   font-size: 10px;
