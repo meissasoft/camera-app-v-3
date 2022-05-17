@@ -17,8 +17,13 @@ import {
  * @returns Verification page
  */
 const onClickHeaderIcon = () => {
-  router.push('/language');
+  router.push('/otpVerification');
 };
+
+const onClickCard = () => {
+  router.push('/');
+};
+
 const Verification = () => {
   return (
     <>
@@ -35,6 +40,7 @@ const Verification = () => {
             step={1}
             heading="Identity document verification"
             content="Take a picture of an identity document and upload it for verification"
+            onClick={onClickCard}
           />
           <StepLayout
             rightIcon="arrow"

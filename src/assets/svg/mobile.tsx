@@ -1,7 +1,7 @@
 export const MobileIcon = () => (
   <svg
-    width="156"
-    height="156"
+    width="120"
+    height="120"
     viewBox="0 0 156 156"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -1,34 +1,12 @@
 import styled from '@emotion/styled';
 export const DivMain = styled.div`
-  padding: 20px;
-`;
-export const BoxStyled = styled.div`
-  display: flex;
-  position: relative;
-  padding: 40px 20px;
-  .container {
-    height: 100vh;
+  padding: 20px 20px;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
   }
-`;
-export const DivFormWrapperContainer = styled.div`
-  width: 100%;
-  align-self: center;
-  .heading {
-    font-size: 38px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 26px;
-    letter-spacing: 0px;
-    text-align: center;
-    margin-top: 90px;
-  }
-`;
-export const DivInner = styled.div<{ isMobile?: boolean }>`
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
   .loginInput {
     border: 1.2px solid #000000;
     border-radius: 5px;
@@ -66,18 +44,4 @@ export const DivInner = styled.div<{ isMobile?: boolean }>`
   .separator:not(:empty)::after {
     margin-left: 0.25em;
   }
-`;
-export const MobileSvg = styled.div<{ isMobile?: boolean }>`
-  position: absolute;
-  width: 156px;
-  height: 156px;
-  left: 110px;
-  top: 128px;
-`;
-export const Form = styled.div<{ isMobile?: boolean }>`
-  position: absolute;
-  width: 156px;
-  height: 156px;
-  left: 110px;
-  top: 128px;
 `;

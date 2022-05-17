@@ -6,11 +6,12 @@ import HomePage from './home/index.page';
  *
  * @returns Landing page
  */
+
 export default function LandingPage() {
   return (
     <>
       <Head>
-        <title>Redux Bolier Plate</title>
+        <title>Camera App</title>
       </Head>
       <HomePage />
     </>

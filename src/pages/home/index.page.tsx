@@ -2,26 +2,28 @@ import router from 'next/router';
 
 import Button from '@/components/core/Button';
 
-import { BoxStyled, DivFormWrapperContainer, DivLayout } from './index.styles';
+import { BixDiv } from './index.styles';
 /**
  *
  * @returns Home page
  */
 const Home = () => {
-  const handleCrossIconClick = () => {
-    router.push('/getStarted');
+  const handleStarted = () => {
+    router.push('/language');
   };
   return (
-    <>
-      <BoxStyled>
-        <DivFormWrapperContainer>
-          <DivLayout>
-            <h3 className="heading">Video KYC</h3>
-          </DivLayout>
-        </DivFormWrapperContainer>
-      </BoxStyled>
-      <Button onClick={handleCrossIconClick}>Get Started</Button>
-    </>
+    <BixDiv>
+      <div className="wrapper">
+        <div className="layout">
+          <h3 className="heading">Video KYC</h3>
+        </div>
+      </div>
+      <div className="button-container">
+        <Button onClick={handleStarted} className="m-auto">
+          Get Started
+        </Button>
+      </div>
+    </BixDiv>
   );
 };
 
