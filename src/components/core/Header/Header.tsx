@@ -12,7 +12,7 @@ function Header({ text, onClick }: IHeaderProps) {
     }
   };
   return (
-    <DivHeader className="container">
+    <DivHeader>
       <div className="row flex">
         <div className="col-2" onClick={onIconCLick}>
           <LessThenIcon />

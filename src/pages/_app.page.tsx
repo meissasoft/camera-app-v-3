@@ -4,11 +4,11 @@ import { QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import '@fontsource/inter';
 import { queryClient } from '@/utils/queryClient';
 
 import store, { persistor } from '../store';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-proxima-nova/style.css';
 import '../styles/global.scss';
 
 // This default export is required in a new `pages/_app.js` file.

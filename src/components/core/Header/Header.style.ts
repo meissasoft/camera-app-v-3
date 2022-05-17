@@ -7,6 +7,7 @@ export const StyledText = styled.div`
   text-align: center;
   line-height: 30px;
 `;
+
 export const DivHeader = styled.div`
   .flex {
     display: flex;

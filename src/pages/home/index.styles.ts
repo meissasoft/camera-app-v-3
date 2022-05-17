@@ -1,17 +1,11 @@
 import styled from '@emotion/styled';
 
-export const BoxStyled = styled.div`
-  display: flex;
-  position: relative;
-  padding: 40px 20px;
-  .container {
-    height: 100vh;
+export const BixDiv = styled.div`
+  margin: 0px 20px;
+  .wrapper {
+    width: 100%;
+    align-self: center;
   }
-`;
-
-export const DivFormWrapperContainer = styled.div`
-  width: 100%;
-  align-self: center;
   .heading {
     font-size: 38px;
     font-style: normal;
@@ -21,12 +15,16 @@ export const DivFormWrapperContainer = styled.div`
     text-align: center;
     margin-top: 90px;
   }
-`;
-
-export const DivLayout = styled.div<{ isMobile?: boolean }>`
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  justify-content: space-between;
+  .layout {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+  }
+  .button-container {
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+  }
 `;

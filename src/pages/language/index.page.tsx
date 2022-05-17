@@ -6,7 +6,7 @@ import { TickIcon } from '@/assets/svg/tick-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
-import { BoxStyled, StyledLine, StyledLanguage, Row, DivMain } from './index.styles';
+import { StyledLine, StyledLanguage, Row, DivMain } from './index.styles';
 import { ILanguage } from './index.types';
 
 /**
@@ -74,31 +74,31 @@ const ChooseLangugae = () => {
   };
 
   const handleContinue = () => {
-    router.push('/verification');
+    router.push('/login');
   };
 
   return (
-    <>
-      <DivMain>
-        <BoxStyled>
-          <Header text="Choose a Language" onClick={onClickHeaderIcon} />
-          <div className="container" style={{ marginTop: 20 }}>
-            {langugaes.map(({ name, isActive }, ind) => (
-              <>
-                <Row onClick={() => onClickItem(ind)}>
-                  <div className="col-11">
-                    <StyledLanguage isActive={isActive}>{name}</StyledLanguage>
-                  </div>
-                  <div className="col-1">{isActive && <TickIcon />}</div>
-                </Row>
-                <StyledLine />
-              </>
-            ))}
-          </div>
-        </BoxStyled>
-      </DivMain>
-      <Button onClick={handleContinue}>Continue</Button>
-    </>
+    <DivMain>
+      <Header text="Choose a Language" onClick={onClickHeaderIcon} />
+      <div className="container" style={{ marginTop: 20 }}>
+        {langugaes.map(({ name, isActive }, ind) => (
+          <>
+            <Row onClick={() => onClickItem(ind)}>
+              <div className="col-11">
+                <StyledLanguage isActive={isActive}>{name}</StyledLanguage>
+              </div>
+              <div className="col-1">{isActive && <TickIcon />}</div>
+            </Row>
+            <StyledLine />
+          </>
+        ))}
+      </div>
+      <div className="button-container">
+        <Button onClick={handleContinue} className="m-auto">
+          Continue
+        </Button>
+      </div>
+    </DivMain>
   );
 };
 
