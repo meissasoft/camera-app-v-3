@@ -1,4 +1,4 @@
-export const DrivingLincenceIcon = () => (
+export const VoterIcon = () => (
   <svg
     width="24"
     height="24"

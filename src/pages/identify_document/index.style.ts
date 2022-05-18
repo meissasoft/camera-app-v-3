@@ -3,14 +3,11 @@ import styled from '@emotion/styled';
 export const DivMain = styled.div`
   padding: 20px;
 `;
-export const VerificationStyled = styled.div`
+export const IdentificationStyled = styled.div`
   padding: 20px 0px;
   list-group-item: list-group-item-action;
 `;
-export const VerificationCardStyled = styled.div`
-  text-align: center;
-`;
-export const VerificationTextStyled = styled.p`
+export const IdentificationTextStyled = styled.p`
   margin-top: 20px;
   font-style: normal;
   font-weight: 600;
@@ -18,7 +15,7 @@ export const VerificationTextStyled = styled.p`
   text-align: center;
   margin-bottom: 0px !important;
 `;
-export const VerificationSmallTextStyled = styled.p`
+export const IdentificationSmallTextStyled = styled.p`
   margin-top: 4px !important ;
   font-style: normal;
   font-weight: 400;
@@ -27,14 +24,20 @@ export const VerificationSmallTextStyled = styled.p`
   color: #121212;
   opacity: 0.6;
 `;
-export const IdCardStyled = styled.p`
-  margin-right: 33.91%;
+export const StyledLine = styled.hr`
+  opacity: 0.6;
+
+  margin: 15px 5px 15px 0px;
+  background-color: rgba(0, 0, 0, 0.1);
 `;
-export const AdareCardStyled = styled.p`
+export const IdentifyDocument = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-
-  color: #000000;
+  font-size: 18px;
+`;
+export const IdentifytwoDocument = styled.span`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 100px;
 `;
