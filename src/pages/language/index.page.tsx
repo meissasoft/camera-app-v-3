@@ -94,7 +94,7 @@ const ChooseLangugae = () => {
         ))}
       </div>
       <div className="button-container">
-        <Button onClick={handleContinue} className="m-auto">
+        <Button isBottom onClick={handleContinue} className="m-auto">
           Continue
         </Button>
       </div>

@@ -17,6 +17,9 @@ const AadhaarCard = () => {
   const onClickHeaderIcon = () => {
     router.push('/verification');
   };
+  const handleContinue = () => {
+    router.push('/verification_2');
+  };
 
   return (
     <DivMain>
@@ -32,7 +35,9 @@ const AadhaarCard = () => {
       <div>
         <DivBottom> Make sure that your card details are clear to read with no blur or glare.</DivBottom>
       </div>
-      <Button isBottom>Continue</Button>
+      <Button className="m-auto" isBottom onClick={handleContinue}>
+        Continue
+      </Button>
     </DivMain>
   );
 };

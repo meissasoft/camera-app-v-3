@@ -6,7 +6,7 @@ export const DivMain = styled.div`
   padding: 20px;
   .button-container {
     width: 97%;
-    margin-top: 180px;
+    margin-top: 100px;
     position: relative;
     display: flex;
     align-items: center;
