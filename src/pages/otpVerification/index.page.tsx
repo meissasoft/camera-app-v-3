@@ -6,16 +6,21 @@ import { PasswordIcon } from '@/assets/svg/password';
 import Button from '@/components/core/Button';
 import Heading from '@/components/core/Header/Header';
 import OTPInput from '@/components/core/Otp';
+import { useAppDispatch } from '@/hooks/useReduxTypedHooks';
+import { setLoginStep } from '@/store/auth/authSlice';
 
 import { DivMain } from './index.styles';
 
 const VerifyOtp = () => {
+  const dispatch = useAppDispatch();
+
   const handleBack = () => {
     router.push('/login');
   };
 
   const handleContinue = () => {
     router.push('/verification');
+    dispatch(setLoginStep(1));
   };
 
   return (
