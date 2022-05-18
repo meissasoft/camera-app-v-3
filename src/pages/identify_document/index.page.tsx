@@ -7,14 +7,16 @@ import { PassportIcon } from '@/assets/svg/passport-icon';
 import { VoterIcon } from '@/assets/svg/voter-icon';
 import Header from '@/components/core/Header';
 
-import { Row, StyledLine } from '../language/index.styles';
 import {
+  DivGreaterIcon,
   DivMain,
+  DocumentContainer,
   IdentificationSmallTextStyled,
   IdentificationStyled,
   IdentificationTextStyled,
-  IdentifyDocument,
-  IdentifytwoDocument,
+  IdentifyText,
+  Row,
+  StyledLine,
 } from './index.style';
 
 /**
@@ -28,47 +30,44 @@ const onClickHeaderIcon = () => {
 const IdentityDocument = () => {
   const document = [
     {
-      id: 1,
       name: 'Adhaar Card',
       Svg: IdCardIcon,
     },
     {
-      id: 2,
       name: 'Passport',
       Svg: PassportIcon,
     },
     {
-      id: 3,
-      name: 'DriverLincenceIcon',
+      name: 'Driver Lincence ',
       Svg: DriverLincenceIcon,
     },
-    { id: 4, name: 'VoterIcon', Svg: VoterIcon },
+    { name: 'Voter ID', Svg: VoterIcon },
   ];
-  console.log(document);
+
   return (
     <>
       <DivMain>
         <IdentificationStyled>
-          <Header text="Identity Document Verification" onClick={onClickHeaderIcon} />
+          <Header isLongText onClick={onClickHeaderIcon} text="Identity Document Verification" />
           <IdentificationTextStyled>Select a documemt</IdentificationTextStyled>
           <IdentificationSmallTextStyled>You will take a picture of it in next steps</IdentificationSmallTextStyled>
         </IdentificationStyled>
-        {document.map((doc, id) => (
-          <>
-            <Row key={id}>
-              <div className="col-1">
-                <IdentifyDocument>{doc.Svg()}</IdentifyDocument>
-              </div>
-              <div className="col-10">
-                <IdentifytwoDocument>{doc.name}</IdentifytwoDocument>
-              </div>
-              <div className="col-1">
-                <GreaterThenIcon />
-              </div>
-            </Row>
-            <StyledLine />
-          </>
-        ))}
+        <DocumentContainer>
+          {document.map((doc, id) => (
+            <>
+              <Row key={id}>
+                <div className="col-1">{doc.Svg()}</div>
+                <div className="col-10">
+                  <IdentifyText>{doc.name}</IdentifyText>
+                </div>
+                <DivGreaterIcon className="col-1">
+                  <GreaterThenIcon />
+                </DivGreaterIcon>
+              </Row>
+              {id + 1 === document.length ? '' : <StyledLine />}
+            </>
+          ))}
+        </DocumentContainer>
       </DivMain>
     </>
   );

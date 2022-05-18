@@ -6,7 +6,7 @@ import { TickIcon } from '@/assets/svg/tick-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
-import { StyledLine, StyledLanguage, Row, DivMain } from './index.styles';
+import { StyledLine, StyledLanguage, Row, DivMain, DivMarginTop } from './index.styles';
 import { ILanguage } from './index.types';
 
 /**
@@ -80,7 +80,7 @@ const ChooseLangugae = () => {
   return (
     <DivMain>
       <Header text="Choose a Language" onClick={onClickHeaderIcon} />
-      <div className="container" style={{ marginTop: 20 }}>
+      <DivMarginTop>
         {langugaes.map(({ name, isActive }, ind) => (
           <>
             <Row onClick={() => onClickItem(ind)}>
@@ -92,7 +92,7 @@ const ChooseLangugae = () => {
             <StyledLine />
           </>
         ))}
-      </div>
+      </DivMarginTop>
       <div className="button-container">
         <Button isBottom onClick={handleContinue} className="m-auto">
           Continue

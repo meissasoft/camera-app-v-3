@@ -2,29 +2,28 @@ import styled from '@emotion/styled';
 
 export const BixDiv = styled.div`
   margin: 0px 20px;
-  .wrapper {
-    width: 100%;
-    align-self: center;
-  }
-  .heading {
-    font-size: 38px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 26px;
-    letter-spacing: 0px;
-    text-align: center;
-    margin-top: 90px;
-  }
-  .layout {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    justify-content: space-between;
-  }
-  .button-container {
-    width: 100%;
-    position: relative;
-    margin-top: 50px;
-  }
+`;
+export const DivWrapper = styled.div`
+  width: 100%;
+  align-self: center;
+`;
+export const DivHeading = styled.div`
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: center;
+  margin-top: 104px;
+`;
+export const DivLayout = styled.div`
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+`;
+export const DivHomeButton = styled.div`
+  width: 100%;
+  position: relative;
+  margin-top: 50px;
 `;
