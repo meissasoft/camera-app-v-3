@@ -3,6 +3,8 @@ import router from 'next/router';
 import { CardIcon } from '@/assets/svg/card-icon';
 import Header from '@/components/core/Header';
 import StepLayout from '@/components/StepsLayout';
+import { useAppDispatch, useAppSelector } from '@/hooks/useReduxTypedHooks';
+import { setLoginStep } from '@/store/auth/authSlice';
 
 import {
   DivMain,
@@ -16,15 +18,23 @@ import {
  *
  * @returns Verification page
  */
-const onClickHeaderIcon = () => {
-  router.push('/otpVerification');
-};
-
-const onClickCard = () => {
-  router.push('/aadhaar_card');
-};
 
 const Verification = () => {
+  const {
+    auth: { loginSteps },
+  } = useAppSelector((state) => state);
+
+  const dispatch = useAppDispatch();
+
+  const onClickHeaderIcon = () => {
+    router.push('/otpVerification');
+  };
+
+  const onClickCard = () => {
+    router.push('/aadhaar_card');
+    dispatch(setLoginStep(2));
+  };
+  console.log('loginSteps', loginSteps);
   return (
     <>
       <DivMain>
@@ -36,7 +46,7 @@ const Verification = () => {
           <VerificationTextStyled>Verify your identity</VerificationTextStyled>
           <VerificationSmallTextStyled>It will take less than 2 minutes</VerificationSmallTextStyled>
           <StepLayout
-            rightIcon="arrow"
+            rightIcon={loginSteps === 2 ? 'done' : 'arrow'}
             step={1}
             heading="Identity document verification"
             content="Take a picture of an identity document and upload it for verification"
@@ -47,7 +57,7 @@ const Verification = () => {
             step={2}
             heading="Record a selfie video"
             content="Speak out load and move your head, Finish actions in 25 seconds."
-            isDisabled={true}
+            isDisabled={loginSteps === 2 ? false : true}
           />
         </VerificationStyled>
       </DivMain>

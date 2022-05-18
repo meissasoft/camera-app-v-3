@@ -14,16 +14,13 @@ import { DivBottom, DivCard, DivMain } from './index.styles';
  */
 
 const AadhaarCard = () => {
-  const onClickHeaderIcon = () => {
-    router.push('/verification');
-  };
   const handleContinue = () => {
-    router.push('/verification_2');
+    router.push('/verification');
   };
 
   return (
     <DivMain>
-      <Header text="Aadhaar card" onClick={onClickHeaderIcon} />
+      <Header text="Aadhaar card" onClick={handleContinue} />
       <HeadingWithButton text="Aadhaar card front side" />
       <DivCard>
         <AadhaarFront />

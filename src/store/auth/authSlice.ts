@@ -2,7 +2,7 @@ import { ActionReducerMapBuilder, createAsyncThunk, createSlice, PayloadAction }
 
 import { loginService } from '@/services/auth/loginService';
 
-import { UserState, User, ILoginRequest } from './types';
+import { UserState, ILoginRequest, LoginState } from './types';
 
 export const initialState: UserState = {
   user: {
@@ -33,20 +33,8 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setUser(state: UserState, { payload }: PayloadAction<User>) {
-      state.user = payload;
-    },
-    setToken(state: UserState, { payload }: PayloadAction<string>) {
-      state.token = payload;
-    },
-    clearError(state: UserState) {
-      state.error = '';
-    },
-    resetUser: () => {
-      return initialState;
-    },
-    resetStatus: (state: UserState) => {
-      state.status = '';
+    setLoginStep: (state: LoginState, action: PayloadAction<number>) => {
+      state.loginSteps = action.payload;
     },
   },
   // redux thunk will be added in extraReducers
@@ -67,6 +55,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { resetUser, setUser, setToken, clearError, resetStatus } = authSlice.actions;
+export const { setLoginStep } = authSlice.actions;
 
 export default authSlice.reducer;

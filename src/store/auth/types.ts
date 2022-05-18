@@ -14,18 +14,8 @@ export interface User {
   countryCode?: string;
 }
 
-export type UserState = {
-  user: User;
-  token: string | null;
-  isAuthenticated: boolean;
-  status: string;
-  otp: string | null;
-  otpVerified: boolean;
-  otpSent: boolean;
-  error: string | undefined;
-  allWallet: Wallet[];
-  draftWallet?: Wallet | undefined;
-  actionWalletId?: string;
+export type LoginState = {
+  loginSteps: number;
 };
 
 export type Wallet = {
