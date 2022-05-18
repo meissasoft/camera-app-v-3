@@ -35,4 +35,6 @@ export const COLORS = {
   GREY_3: '#efefef',
   WHITE_80: '#ffffff80',
   WHITE_08: '#00000008',
+  WHITE: '#ffff',
+  GREY_12: '#121212',
 };

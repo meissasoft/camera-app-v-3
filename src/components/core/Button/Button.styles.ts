@@ -9,12 +9,10 @@ export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor
     `
       : 'absolute'};
   bottom: 20px;
-  left: 0px;
-  right: 0px;
   margin-left: 18px;
   margin-right: 18px;
   min-width: 100px;
-  width: 90%;
+  width: 100%;
   height: 50px;
   background-color: ${({ backgroundColor }) => `${backgroundColor || COLORS.LABEL_COLOR}`};
   color: ${COLORS.WHITE_100};

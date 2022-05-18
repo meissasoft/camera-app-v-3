@@ -4,40 +4,20 @@ import { COLORS } from '@/constants/colors';
 
 export const DivMain = styled.div`
   padding: 20px;
-`;
-
-export const BoxStyled = styled.div`
-  padding: 20px 0px;
-  list-group-item: list-group-item-action;
+  .button-container {
+    width: 97%;
+    margin-top: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
-
   justify-content: space-between;
-`;
-
-export const DivFormWrapperContainer = styled.div`
-  width: 100%;
-  align-self: center;
-  .heading {
-    font-size: 38px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 26px;
-    letter-spacing: 0px;
-    text-align: center;
-    margin-top: 90px;
-  }
-`;
-export const HeaderStyled = styled.div`
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-
-  text-align: center;
-  color: #000000;
 `;
 
 export const StyledLanguage = styled.span<{ isActive: boolean }>`
