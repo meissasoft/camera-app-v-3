@@ -2,7 +2,7 @@ import router from 'next/router';
 
 import Button from '@/components/core/Button';
 
-import { BixDiv } from './index.styles';
+import { BixDiv, DivHeading, DivHomeButton, DivLayout, DivWrapper } from './index.styles';
 /**
  *
  * @returns Home page
@@ -13,16 +13,16 @@ const Home = () => {
   };
   return (
     <BixDiv>
-      <div className="wrapper">
-        <div className="layout">
-          <h3 className="heading">Video KYC</h3>
-        </div>
-      </div>
-      <div className="button-container">
+      <DivWrapper>
+        <DivLayout>
+          <DivHeading>Video KYC</DivHeading>
+        </DivLayout>
+      </DivWrapper>
+      <DivHomeButton>
         <Button onClick={handleStarted} className="m-auto">
           Get Started
         </Button>
-      </div>
+      </DivHomeButton>
     </BixDiv>
   );
 };
