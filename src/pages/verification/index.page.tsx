@@ -31,7 +31,7 @@ const Verification = () => {
   };
 
   const onClickCard = () => {
-    router.push('/aadhaar_card');
+    router.push('/camera_pic');
     dispatch(setLoginStep(2));
   };
   console.log('loginSteps', loginSteps);
