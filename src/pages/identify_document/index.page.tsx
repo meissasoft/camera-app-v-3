@@ -56,10 +56,10 @@ const IdentityDocument = () => {
         {document.map((doc, id) => (
           <>
             <Row key={id}>
-              <div className="col-2">
+              <div className="col-1">
                 <IdentifyDocument>{doc.Svg()}</IdentifyDocument>
               </div>
-              <div className="col-9">
+              <div className="col-10">
                 <IdentifytwoDocument>{doc.name}</IdentifytwoDocument>
               </div>
               <div className="col-1">

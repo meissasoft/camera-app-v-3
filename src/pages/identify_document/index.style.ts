@@ -34,10 +34,12 @@ export const IdentifyDocument = styled.span`
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
+  line-height: 18px;
 `;
 export const IdentifytwoDocument = styled.span`
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  margin-right: 100px;
+  font-size: 16px;
+  margin-left: 12px;
+  margin-top: 12px;
 `;
