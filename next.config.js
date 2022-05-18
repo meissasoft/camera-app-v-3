@@ -8,6 +8,7 @@ const nextConfig = {
     ROLLBAR_ID: process.env.ROLLBAR_ID,
   },
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
