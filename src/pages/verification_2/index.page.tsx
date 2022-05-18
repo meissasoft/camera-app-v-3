@@ -36,18 +36,17 @@ const Verification = () => {
           <VerificationTextStyled>Verify your identity</VerificationTextStyled>
           <VerificationSmallTextStyled>It will take less than 2 minutes</VerificationSmallTextStyled>
           <StepLayout
-            rightIcon="arrow"
+            rightIcon="done"
             step={1}
             heading="Identity document verification"
             content="Take a picture of an identity document and upload it for verification"
-            onClick={onClickCard}
           />
           <StepLayout
             rightIcon="arrow"
             step={2}
             heading="Record a selfie video"
             content="Speak out load and move your head, Finish actions in 25 seconds."
-            isDisabled={true}
+            onClick={onClickCard}
           />
         </VerificationStyled>
       </DivMain>

@@ -1,4 +1,4 @@
-export const DoneIcon = (isDisabled: any) => (
+export const DoneIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="24" height="24" rx="12" fill="url(#paint0_linear_55_1964)" />
     <path
@@ -9,8 +9,8 @@ export const DoneIcon = (isDisabled: any) => (
     />
     <defs>
       <linearGradient id="paint0_linear_55_1964" x1="12" y1="0" x2="12" y2="24" gradientUnits="userSpaceOnUse">
-        <stop stopColor={isDisabled ? 'grey' : '#38568F'} />
-        <stop offset="1" stopColor={isDisabled ? 'grey' : '#38A1F7'} />
+        <stop stopColor="#38568F" />
+        <stop offset="1" stopColor="#38A1F7" />
       </linearGradient>
     </defs>
   </svg>
