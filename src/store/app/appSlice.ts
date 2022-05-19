@@ -19,6 +19,7 @@ const appSlice = createSlice({
   extraReducers: (builder: ActionReducerMapBuilder<appState>) => {
     console.log(builder);
     // Pending state of API
+    console.log(builder);
   },
 });
 

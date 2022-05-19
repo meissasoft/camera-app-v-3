@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Modal, Row } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 import { BodyModalStyled, IineModel, ParagraphModel, ParagraphTextModel } from './index.style';
 
@@ -17,7 +17,7 @@ interface Props {
 
 function MyVerticallyCenteredModal({ show, onHide, onOk }: Props) {
   return (
-    <Modal show={show} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+    <Modal className="modal-cont" show={show} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <BodyModalStyled>
         <Modal.Body>
           <ParagraphModel>
@@ -32,16 +32,12 @@ function MyVerticallyCenteredModal({ show, onHide, onOk }: Props) {
         </Modal.Body>
         <IineModel />
         <Modal.Footer>
-          <Row>
-            <>
-              <div className="col-6">
-                <Button onClick={onHide}>Don’t allow</Button>
-              </div>
-              <div className="col-6">
-                <Button onClick={onOk}>OK</Button>
-              </div>
-            </>
-          </Row>
+          <div className="col-5">
+            <Button onClick={onHide}>Don’t allow</Button>
+          </div>
+          <div className="col-5 border-left">
+            <Button onClick={onOk}>OK</Button>
+          </div>
         </Modal.Footer>
       </BodyModalStyled>
     </Modal>
