@@ -30,7 +30,13 @@ const Verification = () => {
   const getVideo = () => {
     navigator.mediaDevices
       .getUserMedia({
-        video: { width: 1920, height: 1080 },
+        video: {
+          width: 1920,
+          height: 1080,
+          facingMode: {
+            exact: 'environment',
+          },
+        },
       })
       .then((stream) => {
         const video = videoRef.current as any;
