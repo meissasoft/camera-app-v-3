@@ -1,13 +1,11 @@
 import { ActionReducerMapBuilder, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-
 import { appState } from './types';
 
 export const initialState: appState = {
   verificationStep: 0,
-  selectedLanguage: 'en'
+  selectedLanguage: 'en',
 };
-
 
 const appSlice = createSlice({
   name: 'app',
@@ -20,6 +18,7 @@ const appSlice = createSlice({
   // redux thunk will be added in extraReducers
   extraReducers: (builder: ActionReducerMapBuilder<appState>) => {
     // Pending state of API
+    console.log(builder);
   },
 });
 

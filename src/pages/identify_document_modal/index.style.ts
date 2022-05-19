@@ -15,7 +15,7 @@ export const DivModelButton2 = styled.div`
   flex-grow: 6;
 `;
 export const ParagraphModel = styled.p`
-  font-family: 'SF Pro Text';
+  margin-bottom: 5px;
   font-style: normal;
   font-weight: 600;
   font-size: 17px;
@@ -47,19 +47,50 @@ export const BodyModalStyled = styled.div`
   backdrop-filter: blur(54.3656px);
 
   border-radius: 14px;
+  .modal-body {
+    width: 100%;
+  }
+  .modal-footer {
+    width: 100%;
+    padding: 0;
+    flex-wrap: nowrap;
+    border-top: 1px solid rgba(60, 60, 67, 0.29);
+  }
+  .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-primary {
+    background-color: rgb(219 219 219);
+    border-color: rgb(219 219 219);
+    color: #007aff;
+  }
+  .modal-cont {
+    border: none;
+  }
+  .col-5 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .modal-footer > * {
+    margin: 0;
+    padding: 0.25rem;
+  }
+  .border-left {
+    border-left: 1px solid rgba(60, 60, 67, 0.29);
+  }
 `;
 export const ParagraphTextModel = styled.p`
-  font-family: 'SF Pro Text';
+  margin-bottom: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-
   text-align: center;
   letter-spacing: -0.078px;
-
   color: #000000;
-
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -76,6 +107,5 @@ export const IineModel = styled.p`
 export const CenterModel = styled.p`
   left: calc(50% - 0.5px / 2 - 0.25px);
   bottom: 0px;
-
   background: rgba(60, 60, 67, 0.29);
 `;

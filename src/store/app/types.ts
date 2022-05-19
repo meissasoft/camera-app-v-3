@@ -1,5 +1,4 @@
-
 export type appState = {
   verificationStep: number;
-  selectedLanguage: string;  
-}
+  selectedLanguage: string;
+};
