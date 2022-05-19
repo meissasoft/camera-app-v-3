@@ -22,3 +22,8 @@ export const DivSvg = styled.div`
     padding: 0px 0px 1px 0px;
   }
 `;
+export const DivTime = styled.div`
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+`;
