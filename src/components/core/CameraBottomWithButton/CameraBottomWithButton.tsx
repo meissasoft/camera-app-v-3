@@ -7,7 +7,7 @@ import { CameraBottomWithButtonProps } from './CameraBottomWithButton.types';
 function CameraBottomWithButton({ isVideo = false, onCancel, onReTake, onClick }: CameraBottomWithButtonProps) {
   return (
     <Div>
-      <DivTime>00:00:50</DivTime>
+      {isVideo && <DivTime>00:00:50</DivTime>}
       <DivButton onClick={onClick}>
         <DivSvg>{isVideo ? <VideoButton /> : <CameraButton />}</DivSvg>
       </DivButton>

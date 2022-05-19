@@ -37,6 +37,7 @@
     "dev": "next dev",
     "doc": "typedoc --out docs",
     "build": "next build",
+    "export":"next export",
     "start": "next start",
     "test": "jest",
     "lint": "eslint --ext js,jsx,ts,tsx cypress src --cache --report-unused-disable-directives --max-warnings=0",

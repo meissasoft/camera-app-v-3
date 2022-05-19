@@ -33,6 +33,10 @@ const Verification = () => {
     setTimeout(setStep, 3000);
   };
 
+  const goToVideo = () => {
+    router.push('/video_record');
+  };
+
   const setStep = () => {
     dispatch(setVerificationStep(2));
   };
@@ -60,6 +64,7 @@ const Verification = () => {
             heading="Record a selfie video"
             content="Speak out load and move your head, Finish actions in 25 seconds."
             isDisabled={verificationStep === 2 ? false : true}
+            onClick={goToVideo}
           />
         </VerificationStyled>
       </DivMain>
