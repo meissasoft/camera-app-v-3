@@ -33,7 +33,7 @@ const Verification = () => {
         video: { width: 1920, height: 1080 },
       })
       .then((stream) => {
-        const video = videoRef.current;
+        const video = videoRef.current as any;
         video.srcObject = stream;
         video.play();
       })
@@ -55,7 +55,7 @@ const Verification = () => {
     const width = 314;
     const height = width / (16 / 9);
     const video = videoRef.current;
-    const photo = photoRef.current;
+    const photo = photoRef.current as any;
     photo.width = width;
     photo.height = height;
     const ctx = photo.getContext('2d');

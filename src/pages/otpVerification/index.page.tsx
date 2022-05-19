@@ -7,7 +7,7 @@ import Button from '@/components/core/Button';
 import Heading from '@/components/core/Header/Header';
 import OTPInput from '@/components/core/Otp';
 import { useAppDispatch } from '@/hooks/useReduxTypedHooks';
-import { setLoginStep } from '@/store/auth/authSlice';
+import { setVerificationStep } from '@/store/app';
 
 import { DivMain } from './index.styles';
 
@@ -20,7 +20,7 @@ const VerifyOtp = () => {
 
   const handleContinue = () => {
     router.push('/verification');
-    dispatch(setLoginStep(1));
+    dispatch(setVerificationStep(1));
   };
 
   return (
