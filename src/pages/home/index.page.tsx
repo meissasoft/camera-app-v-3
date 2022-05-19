@@ -1,41 +1,41 @@
 import router from 'next/router';
 
-import { useTranslation } from 'next-i18next';
+import { withTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Button from '@/components/core/Button';
 
-import { BoxStyled, DivFormWrapperContainer, DivLayout } from './index.styles';
-
+import { BixDiv, DivHeading, DivHomeButton, DivLayout, DivWrapper } from './index.styles';
 /**
  *
  * @returns Home page
  *
  */
-const Home = () => {
-  const { t } = useTranslation('common');
-  console.log('t', t);
-  const handleCrossIconClick = () => {
+const Home = ({ t }: { t: any }) => {
+  console.log('t', t('title'));
+  const handleStarted = () => {
     router.push('/language');
   };
   return (
-    <>
-      <BoxStyled>
-        <DivFormWrapperContainer>
-          <DivLayout>
-            <h3 className="heading">{t('title')} Video KYC this is my</h3>
-          </DivLayout>
-        </DivFormWrapperContainer>
-      </BoxStyled>
-      <Button onClick={handleCrossIconClick}>Get Started</Button>
-    </>
+    <BixDiv>
+      <DivWrapper>
+        <DivLayout>
+          <DivHeading>Video KYC</DivHeading>
+        </DivLayout>
+      </DivWrapper>
+      <DivHomeButton>
+        <Button onClick={handleStarted} className="m-auto">
+          Get Started
+        </Button>
+      </DivHomeButton>
+    </BixDiv>
   );
 };
 
-export default Home;
+export default withTranslation('common')(Home);
 
-export const getStaticProps = async (ctx: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(ctx.locale, ['common'])),
+    ...(await serverSideTranslations(locale, ['common'])),
   },
 });

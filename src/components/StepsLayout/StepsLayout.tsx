@@ -18,9 +18,7 @@ function StepLayout({ step, content, isDisabled = false, heading, rightIcon, onC
           <DivContent>{content}</DivContent>
         </div>
         <DivIcon>
-          <div className="col-1 divIcon">
-            {rightIcon === 'done' ? <DoneIcon isDisabled={isDisabled} /> : <ArrowRight isDisabled={isDisabled} />}
-          </div>
+          <div className="col-1 divIcon">{rightIcon === 'done' ? <DoneIcon /> : <ArrowRight />}</div>
         </DivIcon>
       </div>
     </DivStepLayout>
