@@ -1,5 +1,8 @@
 import router from 'next/router';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { CardIcon } from '@/assets/svg/card-icon';
 import Header from '@/components/core/Header';
 import StepLayout from '@/components/StepsLayout';
@@ -21,6 +24,7 @@ import {
 
 const Verification = () => {
   const { verificationStep } = useAppSelector(getAppDataSelector);
+  const { t } = useTranslation('verification');
 
   const dispatch = useAppDispatch();
 
@@ -42,34 +46,36 @@ const Verification = () => {
   };
 
   return (
-    <>
-      <DivMain>
-        <Header text="Identity Verification" onClick={onClickHeaderIcon} />
-        <VerificationStyled>
-          <VerificationCardStyled>
-            <CardIcon />
-          </VerificationCardStyled>
-          <VerificationTextStyled>Verify your identity</VerificationTextStyled>
-          <VerificationSmallTextStyled>It will take less than 2 minutes</VerificationSmallTextStyled>
-          <StepLayout
-            rightIcon={verificationStep === 2 ? 'done' : 'arrow'}
-            step={1}
-            heading="Identity document verification"
-            content="Take a picture of an identity document and upload it for verification"
-            onClick={onClickCard}
-          />
-          <StepLayout
-            rightIcon="arrow"
-            step={2}
-            heading="Record a selfie video"
-            content="Speak out load and move your head, Finish actions in 25 seconds."
-            isDisabled={verificationStep === 2 ? false : true}
-            onClick={goToVideo}
-          />
-        </VerificationStyled>
-      </DivMain>
-    </>
+    <DivMain>
+      <Header text={t('header')} onClick={onClickHeaderIcon} />
+      <VerificationStyled>
+        <VerificationCardStyled>
+          <CardIcon />
+        </VerificationCardStyled>
+        <VerificationTextStyled>{t('heading')}</VerificationTextStyled>
+        <VerificationSmallTextStyled>{t('headingPara')}</VerificationSmallTextStyled>
+        <StepLayout
+          rightIcon={verificationStep === 2 ? 'done' : 'arrow'}
+          step={t('step1')}
+          heading={t('heading2')}
+          content={t('heading2para')}
+          onClick={onClickCard}
+        />
+        <StepLayout
+          rightIcon="arrow"
+          step={2}
+          heading={t('heading3')}
+          content={t('heading3para')}
+          isDisabled={verificationStep === 2 ? false : true}
+          onClick={goToVideo}
+        />
+      </VerificationStyled>
+    </DivMain>
   );
 };
-
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['verification'])),
+  },
+});
 export default Verification;
