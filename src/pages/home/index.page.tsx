@@ -1,11 +1,15 @@
 import router from 'next/router';
 
+import React from 'react';
+
 import Button from '@/components/core/Button';
 
 import { BixDiv, DivHeading, DivHomeButton, DivLayout, DivWrapper } from './index.styles';
+
 /**
  *
  * @returns Home page
+ *
  */
 const Home = () => {
   const handleStarted = () => {
