@@ -5,17 +5,19 @@ import React from 'react';
 
 import { Row } from 'react-bootstrap';
 
-// import img from '@/assets/png/Screenshot 2018-11-21 at 13.17.00.png';
 import Screenshot from '@/assets/png/Screenshot.png';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
-import { ButtonStyled } from '@/components/core/Button/Button.styles';
+import { VideoIcon } from '@/assets/svg/video-icon';
+import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
 import {
-  DivButtonStyled,
   DivGraterThenIconStyled,
+  DivHomeButton,
+  DivIconStyled,
   DivMain,
   DivVideoStyled,
+  DivWhiteIconStyled,
   InstructionStyled,
   ParagraphInstructionPoint1Styled,
   ParagraphInstructionpoint2Styled,
@@ -48,6 +50,11 @@ const VideoRecord = () => {
         <DivVideoStyled>
           <Image className="object-cover" src={Screenshot} />
         </DivVideoStyled>
+        <DivWhiteIconStyled></DivWhiteIconStyled>
+        <DivIconStyled>
+          <VideoIcon />
+        </DivIconStyled>
+
         <InstructionStyled>Instructions</InstructionStyled>
         <Row>
           <div className="col-1">
@@ -69,9 +76,14 @@ const VideoRecord = () => {
             <ParagraphInstructionpoint2Styled>Finish actions in 25 seconds.</ParagraphInstructionpoint2Styled>
           </div>
         </Row>
-        <DivButtonStyled>
-          <ButtonStyled onClick={onClickContinue}>Continue</ButtonStyled>
-        </DivButtonStyled>
+
+        <div className="button-container">
+          <DivHomeButton>
+            <Button isBottom onClick={onClickContinue} className="m-auto">
+              Continue
+            </Button>
+          </DivHomeButton>
+        </div>
       </DivMain>
     </>
   );
