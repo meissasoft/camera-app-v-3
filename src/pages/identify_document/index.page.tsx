@@ -1,5 +1,9 @@
 import router from 'next/router';
 
+import React from 'react';
+
+import { Button } from 'react-bootstrap';
+
 import { DriverLincenceIcon } from '@/assets/svg/driver-lincence-icon';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 import { IdCardIcon } from '@/assets/svg/id-card-icon';
@@ -7,6 +11,7 @@ import { PassportIcon } from '@/assets/svg/passport-icon';
 import { VoterIcon } from '@/assets/svg/voter-icon';
 import Header from '@/components/core/Header';
 
+import MyVerticallyCenteredModal from '../identify_document_modal/index.page';
 import {
   DivGreaterIcon,
   DivMain,
@@ -27,7 +32,9 @@ import {
 const onClickHeaderIcon = () => {
   router.push('/verification');
 };
+
 const IdentityDocument = () => {
+  const [modalShow, setModalShow] = React.useState(false);
   const document = [
     {
       name: 'Adhaar Card',
@@ -69,6 +76,10 @@ const IdentityDocument = () => {
           ))}
         </DocumentContainer>
       </DivMain>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Launch vertically centered modal
+      </Button>
+      <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 };
