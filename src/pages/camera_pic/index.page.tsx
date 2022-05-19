@@ -63,13 +63,11 @@ const Verification = () => {
     const dataUrl = photo.toDataURL();
     if (cardFront.length < 5) {
       setcardFront(dataUrl);
-    } else {
+    } else if (cardBack.length < 5) {
       setcardBack(dataUrl);
-    }
-    setIsFront(false);
-    if (cardFront.length > 5 && cardBack.length > 5) {
       router.push('/aadhaar_card');
     }
+    setIsFront(false);
   };
   return (
     <>

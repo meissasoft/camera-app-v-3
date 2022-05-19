@@ -31,9 +31,14 @@ const Verification = () => {
   };
 
   const onClickCard = () => {
-    router.push('/camera_pic');
+    router.push('/identify_document');
+    setTimeout(setStep, 3000);
+  };
+
+  const setStep = () => {
     dispatch(setLoginStep(2));
   };
+
   console.log('loginSteps', loginSteps);
   return (
     <>

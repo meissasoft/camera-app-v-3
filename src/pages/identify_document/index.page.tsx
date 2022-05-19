@@ -2,8 +2,6 @@ import router from 'next/router';
 
 import React from 'react';
 
-import { Button } from 'react-bootstrap';
-
 import { DriverLincenceIcon } from '@/assets/svg/driver-lincence-icon';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 import { IdCardIcon } from '@/assets/svg/id-card-icon';
@@ -51,6 +49,12 @@ const IdentityDocument = () => {
     { name: 'Voter ID', Svg: VoterIcon },
   ];
 
+  const onClickCard = () => {
+    setModalShow(true);
+  };
+  const onClicOk = () => {
+    router.push('/camera_pic');
+  };
   return (
     <>
       <DivMain>
@@ -62,7 +66,7 @@ const IdentityDocument = () => {
         <DocumentContainer>
           {document.map((doc, id) => (
             <>
-              <Row key={id}>
+              <Row onClick={onClickCard} key={id}>
                 <div className="col-1">{doc.Svg()}</div>
                 <div className="col-10">
                   <IdentifyText>{doc.name}</IdentifyText>
@@ -76,10 +80,7 @@ const IdentityDocument = () => {
           ))}
         </DocumentContainer>
       </DivMain>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-      <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+      <MyVerticallyCenteredModal show={modalShow} onOk={onClicOk} onHide={() => setModalShow(false)} />
     </>
   );
 };

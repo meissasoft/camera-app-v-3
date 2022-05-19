@@ -12,9 +12,10 @@ import { BodyModalStyled, IineModel, ParagraphModel, ParagraphTextModel } from '
 interface Props {
   show?: boolean;
   onHide: any;
+  onOk?: any;
 }
 
-function MyVerticallyCenteredModal({ show, onHide }: Props) {
+function MyVerticallyCenteredModal({ show, onHide, onOk }: Props) {
   return (
     <Modal show={show} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <BodyModalStyled>
@@ -37,7 +38,7 @@ function MyVerticallyCenteredModal({ show, onHide }: Props) {
                 <Button onClick={onHide}>Don’t allow</Button>
               </div>
               <div className="col-6">
-                <Button onClick={onHide}>OK</Button>
+                <Button onClick={onOk}>OK</Button>
               </div>
             </>
           </Row>
