@@ -87,7 +87,6 @@ const ChooseLangugae = () => {
   const handleContinue = () => {
     router.push(`${selectedLangugage}/login`);
   };
-  console.log('selectedLangugage', selectedLangugage);
   return (
     <DivMain>
       <Header text="Choose a Language" onClick={onClickHeaderIcon} />

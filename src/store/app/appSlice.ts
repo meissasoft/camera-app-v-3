@@ -17,7 +17,6 @@ const appSlice = createSlice({
   },
   // redux thunk will be added in extraReducers
   extraReducers: (builder: ActionReducerMapBuilder<appState>) => {
-    console.log(builder);
     // Pending state of API
     console.log(builder);
   },

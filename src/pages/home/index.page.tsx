@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import router from 'next/router';
 
 import React from 'react';
 
@@ -12,8 +12,6 @@ import { BixDiv, DivHeading, DivHomeButton, DivLayout, DivWrapper } from './inde
  *
  */
 const Home = () => {
-  const router = useRouter();
-
   const handleStarted = () => {
     router.push('/language');
   };
