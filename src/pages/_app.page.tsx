@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-proxima-nova/style.css';
 import '../styles/global.scss';
 
-// This default export is required in a new
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
@@ -24,4 +23,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </QueryClientProvider>
   );
 }
+
 export default appWithTranslation(MyApp);

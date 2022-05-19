@@ -1,5 +1,8 @@
 import router from 'next/router';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { MobileIcon } from '@/assets/svg/mobile';
 import Button from '@/components/core/Button';
 import FieldInput from '@/components/core/FieldInput';
@@ -8,6 +11,8 @@ import Heading from '@/components/core/Header';
 import { DivMain } from './index.styles';
 
 const Login = () => {
+  const { t } = useTranslation('login');
+
   const handleLogin = () => {
     router.push('/otpVerification');
   };
@@ -16,27 +21,33 @@ const Login = () => {
   };
   return (
     <DivMain>
-      <Heading text="Get Started" onClick={handleBack} />
+      <Heading text={t('header')} onClick={handleBack} />
       <div className="inner">
         <MobileIcon />
         <FieldInput
-          placeholder="Enter Mobile Number"
+          placeholder={t('placeholder')}
           name={'mobile'}
           className="my-2 mt-5 m-auto rounded border p-2 loginInput"
         />
         <Button isBottom onClick={handleLogin} className="my-2 m-auto">
-          Login
+          {t('login')}
         </Button>
 
         <div className="separator">
-          <p className="separatorText mx-2 my-3">Or</p>
+          <p className="separatorText mx-2 my-3">{t('or')}</p>
         </div>
         <Button isBottom onClick={handleLogin} className="my-2 m-auot">
-          Scan QR
+          {t('scan')}
         </Button>
       </div>
     </DivMain>
   );
 };
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['login'])),
+  },
+});
 
 export default Login;

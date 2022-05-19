@@ -1,18 +1,19 @@
-import router from 'next/router';
+import { useRouter } from 'next/router';
 
-import { withTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import React from 'react';
 
 import Button from '@/components/core/Button';
 
 import { BixDiv, DivHeading, DivHomeButton, DivLayout, DivWrapper } from './index.styles';
+
 /**
  *
  * @returns Home page
  *
  */
-const Home = ({ t }: { t: any }) => {
-  console.log('t', t('title'));
+const Home = () => {
+  const router = useRouter();
+
   const handleStarted = () => {
     router.push('/language');
   };
@@ -32,10 +33,4 @@ const Home = ({ t }: { t: any }) => {
   );
 };
 
-export default withTranslation('common')(Home);
-
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-});
+export default Home;
