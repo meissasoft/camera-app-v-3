@@ -13,6 +13,10 @@ interface Props {
   show?: boolean;
   onHide: any;
   onOk?: any;
+  heading?: any;
+  paragraph?: any;
+  dontAllow?: any;
+  ok?: any;
 }
 
 function MyVerticallyCenteredModal({ show, onHide, onOk, heading, paragraph, dontAllow, ok }: Props) {

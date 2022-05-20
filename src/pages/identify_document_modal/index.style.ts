@@ -20,7 +20,6 @@ export const ParagraphModel = styled.p`
   font-weight: 600;
   font-size: 17px;
   line-height: 22px;
-  /* or 129% */
 
   text-align: center;
   letter-spacing: -0.408px;

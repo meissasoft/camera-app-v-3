@@ -5,8 +5,8 @@ import { COLORS } from '@/constants/colors';
 export const DivMain = styled.div`
   padding: 20px;
   .button-container {
-    width: 97%;
-    margin-top: 100px;
+    width: 100%;
+    margin-top: 48px;
     position: relative;
     display: flex;
     align-items: center;
