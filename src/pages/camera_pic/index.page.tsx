@@ -2,6 +2,9 @@ import router from 'next/router';
 
 import { useEffect, useRef, useState } from 'react';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import CameraBottomWithButton from '@/components/core/CameraBottomWithButton';
 import { useAppDispatch } from '@/hooks/useReduxTypedHooks';
 import { setCardBack, setCardFront } from '@/store/app/appSlice';
@@ -81,6 +84,7 @@ const Verification = () => {
     }
     setIsFront(false);
   };
+  const { t } = useTranslation('camera_pic');
   return (
     <>
       <DivMain>
@@ -89,9 +93,9 @@ const Verification = () => {
             <Video ref={videoRef}></Video>
             <Canvas ref={photoRef}></Canvas>
           </DivCameraBox>
-          <VerificationTextStyled>{isFront ? 'Front' : 'Back'} of the card</VerificationTextStyled>
+          <VerificationTextStyled>{isFront ? t('headingFront') : t('Headingback')}</VerificationTextStyled>
           <VerificationSmallTextStyled>
-            Position the {isFront ? 'Front' : 'Back'} of the card in the frame
+            {isFront ? t('headingParaFront') : t('headingParaBack')}
           </VerificationSmallTextStyled>
         </VerificationStyled>
         <CameraBottomWithButton onClick={takePhoto} onCancel={handleCancel} onReTake={handleRetake} />
@@ -99,5 +103,10 @@ const Verification = () => {
     </>
   );
 };
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['camera_pic'])),
+  },
+});
 
 export default Verification;

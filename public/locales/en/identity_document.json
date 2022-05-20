@@ -1,0 +1,13 @@
+{
+  "header": "Identity Document Verification",
+  "heading": "Select a documemt",
+  "headingParagraph": "You will take a picture of it in next steps",
+  "adhaarcard": "Adhaar Card",
+  "passport": "Passport",
+  "licence": "Adhaar Card",
+  "voterid": "Voter ID",
+  "modalheading": "“Video KYC” Would Like to Access the Camera",
+  "modalparagraph": "Required for document and facial capture",
+  "modaldontAllow": "Don't allow",
+  "modalok": "OK"
+}

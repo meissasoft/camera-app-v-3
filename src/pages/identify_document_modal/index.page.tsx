@@ -15,28 +15,21 @@ interface Props {
   onOk?: any;
 }
 
-function MyVerticallyCenteredModal({ show, onHide, onOk }: Props) {
+function MyVerticallyCenteredModal({ show, onHide, onOk, heading, paragraph, dontAllow, ok }: Props) {
   return (
     <Modal className="modal-cont" show={show} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <BodyModalStyled>
         <Modal.Body>
-          <ParagraphModel>
-            “Video KYC” Would Like to
-            <br />
-            Access the Camera
-          </ParagraphModel>
-          <ParagraphTextModel>
-            Required for document and
-            <br /> facial capture
-          </ParagraphTextModel>
+          <ParagraphModel>{heading}</ParagraphModel>
+          <ParagraphTextModel>{paragraph}</ParagraphTextModel>
         </Modal.Body>
         <IineModel />
         <Modal.Footer>
           <div className="col-5">
-            <Button onClick={onHide}>Don’t allow</Button>
+            <Button onClick={onHide}>{dontAllow}</Button>
           </div>
           <div className="col-5 border-left">
-            <Button onClick={onOk}>OK</Button>
+            <Button onClick={onOk}>{ok}</Button>
           </div>
         </Modal.Footer>
       </BodyModalStyled>
