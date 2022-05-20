@@ -2,6 +2,9 @@ import router from 'next/router';
 
 import React from 'react';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { DriverLincenceIcon } from '@/assets/svg/driver-lincence-icon';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 import { IdCardIcon } from '@/assets/svg/id-card-icon';
@@ -32,21 +35,22 @@ const onClickHeaderIcon = () => {
 };
 
 const IdentityDocument = () => {
+  const { t } = useTranslation('identity_document');
   const [modalShow, setModalShow] = React.useState(false);
   const document = [
     {
-      name: 'Adhaar Card',
+      name: t('adhaarcard'),
       Svg: IdCardIcon,
     },
     {
-      name: 'Passport',
+      name: t('passport'),
       Svg: PassportIcon,
     },
     {
-      name: 'Driver Lincence ',
+      name: t('licence'),
       Svg: DriverLincenceIcon,
     },
-    { name: 'Voter ID', Svg: VoterIcon },
+    { name: t('voterid'), Svg: VoterIcon },
   ];
 
   const onClickCard = () => {
@@ -59,9 +63,9 @@ const IdentityDocument = () => {
     <>
       <DivMain>
         <IdentificationStyled>
-          <Header isLongText onClick={onClickHeaderIcon} text="Identity Document Verification" />
-          <IdentificationTextStyled>Select a documemt</IdentificationTextStyled>
-          <IdentificationSmallTextStyled>You will take a picture of it in next steps</IdentificationSmallTextStyled>
+          <Header isLongText onClick={onClickHeaderIcon} text={t('header')} />
+          <IdentificationTextStyled>{t('heading')}</IdentificationTextStyled>
+          <IdentificationSmallTextStyled>{t('headingParagraph')}</IdentificationSmallTextStyled>
         </IdentificationStyled>
         <DocumentContainer>
           {document.map((doc, id) => (
@@ -80,9 +84,15 @@ const IdentityDocument = () => {
           ))}
         </DocumentContainer>
       </DivMain>
-      <MyVerticallyCenteredModal show={modalShow} onOk={onClicOk} onHide={() => setModalShow(false)} />
+      <MyVerticallyCenteredModal show={modalShow} onOk={onClicOk} onHide={() => setModalShow(false)} rout={'modal'} />
     </>
   );
 };
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['identity_document'])),
+  },
+});
 
 export default IdentityDocument;

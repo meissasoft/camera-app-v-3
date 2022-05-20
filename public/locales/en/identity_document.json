@@ -1,0 +1,9 @@
+{
+  "header": "Identity Document Verification",
+  "heading": "Select a documemt",
+  "headingParagraph": "You will take a picture of it in next steps",
+  "adhaarcard": "Adhaar Card",
+  "passport": "Passport",
+  "licence": "Adhaar Card",
+  "voterid": "Voter ID"
+}
