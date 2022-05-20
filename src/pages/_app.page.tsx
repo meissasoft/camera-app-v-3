@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 
+import '../styles/global.scss';
 import { appWithTranslation } from 'next-i18next';
 import { QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
@@ -10,7 +11,6 @@ import { queryClient } from '@/utils/queryClient';
 import store, { persistor } from '../store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-proxima-nova/style.css';
-import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
