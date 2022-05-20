@@ -84,7 +84,15 @@ const IdentityDocument = () => {
           ))}
         </DocumentContainer>
       </DivMain>
-      <MyVerticallyCenteredModal show={modalShow} onOk={onClicOk} onHide={() => setModalShow(false)} rout={'modal'} />
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onOk={onClicOk}
+        onHide={() => setModalShow(false)}
+        heading={t('modalheading')}
+        paragraph={t('modalparagraph')}
+        dontAllow={t('modaldontAllow')}
+        ok={t('modalok')}
+      />
     </>
   );
 };
