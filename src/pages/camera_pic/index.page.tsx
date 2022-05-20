@@ -38,7 +38,7 @@ const Verification = () => {
           width: 1920,
           height: 1080,
           facingMode: {
-            exact: 'user',
+            exact: 'environment',
           },
         },
       })
