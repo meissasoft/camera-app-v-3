@@ -19,45 +19,56 @@ const ChooseLangugae = () => {
     {
       name: 'English',
       isActive: true,
+      code: 'en',
     },
     {
       name: 'Hindi',
       isActive: false,
+      code: 'hi',
     },
     {
       name: 'Telugu',
       isActive: false,
+      code: 'te',
     },
     {
       name: 'Kannada',
       isActive: false,
+      code: 'kn',
     },
     {
       name: 'Tamil',
       isActive: false,
+      code: 'ta',
     },
     {
       name: 'Malayalam',
       isActive: false,
+      code: 'ml',
     },
     {
       name: 'Punjabi',
       isActive: false,
+      code: 'pa',
     },
     {
       name: 'Marati',
       isActive: false,
+      code: 'mr',
     },
     {
       name: 'Gujarati',
       isActive: false,
+      code: 'gu',
     },
     {
       name: 'Bengali',
       isActive: false,
+      code: 'bn',
     },
   ]);
-  const [, setSelectedLanguage] = useState<ILanguage>(langugaes[0]);
+
+  const [selectedLangugage, setSelectedLanguage] = useState<string>(langugaes[0].code);
 
   const onClickHeaderIcon = () => {
     router.push('/');
@@ -70,13 +81,12 @@ const ChooseLangugae = () => {
     const temp = [...langugaes];
     temp[ind].isActive = true;
     setLanguages(temp);
-    setSelectedLanguage(langugaes[ind]);
+    setSelectedLanguage(langugaes[ind].code);
   };
 
   const handleContinue = () => {
-    router.push('/login');
+    router.push(`${selectedLangugage}/login`);
   };
-
   return (
     <DivMain>
       <Header text="Choose a Language" onClick={onClickHeaderIcon} />

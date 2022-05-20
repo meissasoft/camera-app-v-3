@@ -1,5 +1,8 @@
 import router from 'next/router';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { BarIcon } from '@/assets/svg/barIcon';
 import { CrossIcon } from '@/assets/svg/crossIcon';
 import { PasswordIcon } from '@/assets/svg/password';
@@ -14,6 +17,8 @@ import { DivMain } from './index.styles';
 const VerifyOtp = () => {
   const dispatch = useAppDispatch();
 
+  const { t } = useTranslation('otpVerification');
+
   const handleBack = () => {
     router.push('/login');
   };
@@ -26,7 +31,7 @@ const VerifyOtp = () => {
   return (
     <DivMain>
       <div className="heading">
-        <Heading text="Mobile Verification" onClick={handleBack} />
+        <Heading text={t('header')} onClick={handleBack} />
       </div>
       <div className="inner">
         <BarIcon />
@@ -35,8 +40,8 @@ const VerifyOtp = () => {
         </div>
         <div className="my-5 text-center">
           <PasswordIcon />
-          <div className="title">Verification Code</div>
-          <p className="description">Please enter the verification code we sent to your phone number</p>
+          <div className="title">{t('heading')}</div>
+          <p className="description">{t('paragraph')}</p>
         </div>
         <OTPInput
           autoFocus
@@ -50,18 +55,24 @@ const VerifyOtp = () => {
         />
 
         <div className="d-flex w-100 justify-content-center align-items-center mt-4">
-          <span className="mx-2 code-text">I did'nt receive a code</span>
+          <span className="mx-2 code-text">{t('paragraph2')}</span>
           <button className="btn btn-primary">
-            <span className="text">Resend</span>
+            <span className="text">{t('resend')}</span>
           </button>
         </div>
 
         <Button isBottom onClick={handleContinue} className="my-5 m-auto">
-          Continue
+          {t('continue')}
         </Button>
       </div>
     </DivMain>
   );
 };
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['otpVerification'])),
+  },
+});
 
 export default VerifyOtp;
