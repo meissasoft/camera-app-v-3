@@ -6,11 +6,6 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Screenshot from '@/assets/png/video.png';
-import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
-import Button from '@/components/core/Button';
-import Header from '@/components/core/Header';
-
 import {
   DivGraterThenIconStyled,
   DivHomeButton,
@@ -24,6 +19,11 @@ import {
   TextStyled,
   VidoRecordStyled,
 } from './index.style';
+
+import Screenshot from '@/assets/png/video.png';
+import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
+import Button from '@/components/core/Button';
+import Header from '@/components/core/Header';
 
 /**
  *
