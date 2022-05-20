@@ -10,7 +10,7 @@ import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
-import Screenshot from '@/assets/png/video.png';
+import Screenshot from '@/assets/png/video1.png';
 
 import {
   DivGraterThenIconStyled,
