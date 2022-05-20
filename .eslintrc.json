@@ -96,7 +96,7 @@
     "no-unused-expressions": 0,
     "no-unused-vars": 0,
     "import/order": [
-      "error",
+      "warn",
       {
         "groups": ["builtin", "external", "internal"],
         "pathGroups": [
