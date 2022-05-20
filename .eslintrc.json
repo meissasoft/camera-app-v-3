@@ -98,35 +98,8 @@
     "import/order": [
       "warn",
       {
-        "groups": ["builtin", "external", "internal"],
-        "pathGroups": [
-          {
-            "pattern": "next/*",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "next",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "component/*",
-            "group": "external",
-            "position": "after"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["next", "react", "components"],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+        "groups": ["builtin", "external", "internal"]
+    
       }
     ]
   }
