@@ -3,6 +3,8 @@ import router from 'next/router';
 
 import React from 'react';
 
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Row } from 'react-bootstrap';
 
 import Screenshot from '@/assets/png/Screenshot.png';
@@ -39,13 +41,15 @@ const onClickContinue = () => {
 };
 
 const VideoRecord = () => {
+  const { t } = useTranslation('video_record');
+
   return (
     <>
       <DivMain>
         <VidoRecordStyled>
-          <Header text="Record video" onClick={onClickHeaderIcon} />
-          <TextStyled>Record a selfie video</TextStyled>
-          <SmallTextStyled>Let’s make sure nobody’s improvising you</SmallTextStyled>
+          <Header text={t('header')} onClick={onClickHeaderIcon} />
+          <TextStyled>{t('heading')}</TextStyled>
+          <SmallTextStyled>{t('headingParagraph')}</SmallTextStyled>
         </VidoRecordStyled>
         <DivVideoStyled>
           <Image className="object-cover" src={Screenshot} />
@@ -55,7 +59,7 @@ const VideoRecord = () => {
           <VideoIcon />
         </DivIconStyled>
 
-        <InstructionStyled>Instructions</InstructionStyled>
+        <InstructionStyled>{t('instruction')}</InstructionStyled>
         <Row>
           <div className="col-1">
             <DivGraterThenIconStyled>
@@ -63,7 +67,7 @@ const VideoRecord = () => {
             </DivGraterThenIconStyled>
           </div>
           <div className="col-11">
-            <ParagraphInstructionPoint1Styled>Speak out load and move your head</ParagraphInstructionPoint1Styled>
+            <ParagraphInstructionPoint1Styled>{t('option1')}</ParagraphInstructionPoint1Styled>
           </div>
         </Row>
         <Row>
@@ -73,14 +77,14 @@ const VideoRecord = () => {
             </DivGraterThenIconStyled>
           </div>
           <div className="col-11">
-            <ParagraphInstructionpoint2Styled>Finish actions in 25 seconds.</ParagraphInstructionpoint2Styled>
+            <ParagraphInstructionpoint2Styled>{t('option2')}</ParagraphInstructionpoint2Styled>
           </div>
         </Row>
 
         <div className="button-container">
           <DivHomeButton>
             <Button isBottom onClick={onClickContinue} className="m-auto">
-              Continue
+              {t('continue')}
             </Button>
           </DivHomeButton>
         </div>
@@ -88,5 +92,11 @@ const VideoRecord = () => {
     </>
   );
 };
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['video_record'])),
+  },
+});
 
 export default VideoRecord;

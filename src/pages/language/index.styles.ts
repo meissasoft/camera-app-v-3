@@ -18,6 +18,7 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
 `;
 
 export const StyledLanguage = styled.span<{ isActive: boolean }>`
