@@ -1,3 +1,5 @@
+import router from 'next/router';
+
 import React from 'react';
 
 import { Button } from 'react-bootstrap';
@@ -5,11 +7,9 @@ import { Button } from 'react-bootstrap';
 import { DivHeader, StyledText } from './HeadingButton.style';
 import { IHeaderProps } from './HeadingButton.types';
 
-function HeadingWithButton({ text, onClick }: IHeaderProps) {
+function HeadingWithButton({ text }: IHeaderProps) {
   const onIconCLick = () => {
-    if (onClick) {
-      onClick();
-    }
+    router.push('/camera_pic');
   };
   return (
     <DivHeader className="container">

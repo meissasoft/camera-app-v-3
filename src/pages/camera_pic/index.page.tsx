@@ -93,7 +93,7 @@ const Verification = () => {
             <Video ref={videoRef}></Video>
             <Canvas ref={photoRef}></Canvas>
           </DivCameraBox>
-          <VerificationTextStyled>{isFront ? t('headingFront') : t('Headingback')}</VerificationTextStyled>
+          <VerificationTextStyled>{isFront ? t('headingFront') : t('headingBack')}</VerificationTextStyled>
           <VerificationSmallTextStyled>
             {isFront ? t('headingParaFront') : t('headingParaBack')}
           </VerificationSmallTextStyled>

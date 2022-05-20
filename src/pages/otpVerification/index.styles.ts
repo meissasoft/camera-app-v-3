@@ -67,6 +67,7 @@ export const DivMain = styled.div`
     text-align: center;
     outline: none;
     caret-color: linear-gradient(90.81deg, #38568f 10%, #38a1f7 75.3%);
+    padding: 0px 10px;
   }
   .otpInput:focus,
   .otpInput:active
