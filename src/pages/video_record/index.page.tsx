@@ -3,21 +3,17 @@ import router from 'next/router';
 
 import React from 'react';
 
-import { Row } from 'react-bootstrap';
-
-import Screenshot from '@/assets/png/Screenshot.png';
+import Screenshot from '@/assets/png/video.png';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
-import { VideoIcon } from '@/assets/svg/video-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
 import {
   DivGraterThenIconStyled,
   DivHomeButton,
-  DivIconStyled,
   DivMain,
+  DivRappingStyled,
   DivVideoStyled,
-  DivWhiteIconStyled,
   InstructionStyled,
   ParagraphInstructionPoint1Styled,
   ParagraphInstructionpoint2Styled,
@@ -50,41 +46,33 @@ const VideoRecord = () => {
         <DivVideoStyled>
           <Image className="object-cover" src={Screenshot} />
         </DivVideoStyled>
-        <DivWhiteIconStyled></DivWhiteIconStyled>
-        <DivIconStyled>
-          <VideoIcon />
-        </DivIconStyled>
-
-        <InstructionStyled>Instructions</InstructionStyled>
-        <Row>
-          <div className="col-1">
-            <DivGraterThenIconStyled>
+        <DivRappingStyled>
+          <InstructionStyled>Instructions</InstructionStyled>
+          <div className="row">
+            <DivGraterThenIconStyled className="col-1">
               <GreaterThenIcon />
             </DivGraterThenIconStyled>
+            <ParagraphInstructionPoint1Styled className="col-11">
+              Speak out load and move your head
+            </ParagraphInstructionPoint1Styled>
           </div>
-          <div className="col-11">
-            <ParagraphInstructionPoint1Styled>Speak out load and move your head</ParagraphInstructionPoint1Styled>
-          </div>
-        </Row>
-        <Row>
-          <div className="col-1">
-            <DivGraterThenIconStyled>
+          <div className="row">
+            <DivGraterThenIconStyled className="col-1">
               <GreaterThenIcon />
             </DivGraterThenIconStyled>
+            <ParagraphInstructionpoint2Styled className="col-11">
+              Finish actions in 25 seconds.
+            </ParagraphInstructionpoint2Styled>
           </div>
-          <div className="col-11">
-            <ParagraphInstructionpoint2Styled>Finish actions in 25 seconds.</ParagraphInstructionpoint2Styled>
-          </div>
-        </Row>
-
-        <div className="button-container">
-          <DivHomeButton>
-            <Button isBottom onClick={onClickContinue} className="m-auto">
-              Continue
-            </Button>
-          </DivHomeButton>
-        </div>
+        </DivRappingStyled>
       </DivMain>
+      <div>
+        <DivHomeButton>
+          <Button isBottom onClick={onClickContinue} className="m-auto">
+            Continue
+          </Button>
+        </DivHomeButton>
+      </div>
     </>
   );
 };

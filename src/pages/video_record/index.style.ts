@@ -2,6 +2,11 @@ import styled from '@emotion/styled';
 
 export const DivMain = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 `;
 export const VidoRecordStyled = styled.div`
   padding: 20px 0px;
@@ -34,10 +39,9 @@ export const InstructionStyled = styled.p`
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  margin-left: 10px;
   line-height: 24px;
-  margin-right: 235px;
-  text-align: center;
+  margin-left: -10px;
+  margin-top: -50px;
 `;
 export const ParagraphInstructionPoint1Styled = styled.p`
   font-style: normal;
@@ -45,8 +49,7 @@ export const ParagraphInstructionPoint1Styled = styled.p`
   font-size: 18px;
   line-height: 24px;
   opacity: 0.6;
-  margin-right: 20px;
-  text-align: center;
+  margin-left: 5px;
 `;
 export const ParagraphInstructionpoint2Styled = styled.p`
   font-style: normal;
@@ -54,11 +57,12 @@ export const ParagraphInstructionpoint2Styled = styled.p`
   font-size: 18px;
   line-height: 24px;
   opacity: 0.6;
-  margin-right: 79px;
-  text-align: center;
+  margin: 0px auto;
+  margin:left: 0px;
 `;
 export const DivGraterThenIconStyled = styled.div`
-  margin-left: 20px;
+  margin-right: -10px;
+  margin-left: 2px;
 `;
 export const DivButtonStyled = styled.div`
   position: absolute;
@@ -68,25 +72,20 @@ export const DivButtonStyled = styled.div`
   margin-top: 250px;
 `;
 export const DivHomeButton = styled.div`
-  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 150px;
+  margin-bottom: 38px;
   position: relative;
-  margin-top: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-export const DivIconStyled = styled.div`
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  left: 325px;
-  top: 358px;
-  background: linear-gradient(180deg, #38568f 0%, #38a1f7 100%);
-  border-radius: 70px;
-`;
-export const DivWhiteIconStyled = styled.div`
-  position: absolute;
-  width: 7.81px;
-  height: 8.05px;
-  left: 326.11px;
-  top: 398.15px;
-
-  border: 2px solid #ffffff;
+export const DivRappingStyled = styled.div`
+  max-width: 327px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 `;
