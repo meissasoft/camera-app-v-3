@@ -3,6 +3,8 @@ import router from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
 import CameraBottomWithButton from '@/components/core/CameraBottomWithButton';
+import { useAppDispatch } from '@/hooks/useReduxTypedHooks';
+import { setCardBack, setCardFront } from '@/store/app/appSlice';
 
 import {
   Canvas,
@@ -26,6 +28,8 @@ const Verification = () => {
 
   const videoRef = useRef(null);
   const photoRef = useRef(null);
+
+  const dispatch = useAppDispatch();
 
   const getVideo = () => {
     navigator.mediaDevices
@@ -68,9 +72,11 @@ const Verification = () => {
     ctx.drawImage(video, 0, 0, width, height);
     const dataUrl = photo.toDataURL();
     if (cardFront.length < 5) {
+      dispatch(setCardFront(dataUrl));
       setcardFront(dataUrl);
     } else if (cardBack.length < 5) {
       setcardBack(dataUrl);
+      dispatch(setCardBack(dataUrl));
       router.push('/aadhaar_card');
     }
     setIsFront(false);

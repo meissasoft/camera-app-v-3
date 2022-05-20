@@ -86,3 +86,10 @@ export const DiveDone = styled.div`
   margin-top: -175px;
   margin-left: 163px;
 `;
+export const DivWords = styled.div`
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+`;
