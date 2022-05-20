@@ -38,6 +38,7 @@ const onClickContinue = () => {
 
 const VideoRecord = () => {
   const { t } = useTranslation('video_record');
+
   return (
     <>
       <DivMain>
