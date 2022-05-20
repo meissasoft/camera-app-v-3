@@ -74,7 +74,7 @@ export const DivButtonStyled = styled.div`
 export const DivHomeButton = styled.div`
   margin-left: 10px;
   margin-right: 10px;
-  margin-top: 150px;
+  margin-top: 53px;
   margin-bottom: 38px;
   position: relative;
   display: flex;

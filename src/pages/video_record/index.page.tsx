@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import router from 'next/router';
+
 import React from 'react';
+
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -8,6 +10,7 @@ import Screenshot from '@/assets/png/video.png';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
+
 import {
   DivGraterThenIconStyled,
   DivHomeButton,
@@ -50,17 +53,13 @@ const VideoRecord = () => {
             <DivGraterThenIconStyled className="col-1">
               <GreaterThenIcon />
             </DivGraterThenIconStyled>
-            <ParagraphInstructionPoint1Styled className="col-11">
-              {t('option1')}
-            </ParagraphInstructionPoint1Styled>
+            <ParagraphInstructionPoint1Styled className="col-11">{t('option1')}</ParagraphInstructionPoint1Styled>
           </div>
           <div className="row">
             <DivGraterThenIconStyled className="col-1">
               <GreaterThenIcon />
             </DivGraterThenIconStyled>
-            <ParagraphInstructionpoint2Styled className="col-11">
-              {t('option2')}
-            </ParagraphInstructionpoint2Styled>
+            <ParagraphInstructionpoint2Styled className="col-11">{t('option2')}</ParagraphInstructionpoint2Styled>
           </div>
         </DivRappingStyled>
       </DivMain>
