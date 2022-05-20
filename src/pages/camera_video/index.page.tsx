@@ -4,11 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 
 import { DoneIcon } from '@/assets/svg/done-icon';
 import CameraBottomWithButton from '@/components/core/CameraBottomWithButton';
+import { useAppDispatch } from '@/hooks/useReduxTypedHooks';
+import { setRecordedVideo } from '@/store/app/appSlice';
 
 import {
   DivCameraBox,
   DiveDone,
   DivMain,
+  DivWords,
   VerificationSmallTextStyled,
   VerificationStyled,
   VerificationTextStyled,
@@ -22,11 +25,17 @@ import {
 
 const Verification = () => {
   const [isDone, setIsDone] = useState(false);
-  const [videoBlob, setVideoBlob] = useState('');
+  const [words, setWords] = useState('');
+  const [instruction, setinstruction] = useState('Position your face');
+  const [description, setDescriptoin] = useState(
+    `Keep your face within the oval to start recording and follow the instructions`
+  );
 
   const videoRef = useRef(null);
   const mediaRecorder: any = useRef(null);
   const blobsRecorded: any = [];
+
+  const dispatch = useAppDispatch();
 
   const getVideo = () => {
     navigator.mediaDevices
@@ -59,31 +68,43 @@ const Verification = () => {
   const startVideoRecording = () => {
     setIsDone(false);
     mediaRecorder.current.start(1000);
-    setTimeout(stop, 3000);
+    setTimeout(() => {
+      setinstruction('Instruction - 1');
+      setDescriptoin('Look over your right shoulder and back');
+    }, 3000);
+    setTimeout(faceDone, 8000);
+    setTimeout(stop, 20000);
+  };
+
+  const faceDone = () => {
+    setIsDone(true);
+    setTimeout(startWord, 2000);
+  };
+  const startWord = () => {
+    setIsDone(false);
+    setWords(`3 - 0 - 1 - 4`);
+    setinstruction('Instruction - 2');
+    setDescriptoin('Say each digit out loud');
   };
 
   const stop = () => {
     mediaRecorder.current.stop();
-    setVideoBlob(URL.createObjectURL(new Blob(blobsRecorded, { type: 'video/webm' })));
     setIsDone(true);
+    dispatch(setRecordedVideo(URL.createObjectURL(new Blob(blobsRecorded, { type: 'video/webm' }))));
+    router.push('/video_screen');
   };
 
-  console.log('videoBlob', videoBlob, 'mediaRecorder', mediaRecorder);
   return (
     <>
       <DivMain>
-        {/* <video width="320" height="240" controls>
-          <source src="blob:http://localhost:3000/61dcde36-327b-4d82-9d33-d3e187b54d5a" type="video/mp4" />
-        </video> */}
         <VerificationStyled>
           <DivCameraBox background={isDone}>
             <Video ref={videoRef} isDone={isDone}></Video>
             <DiveDone>{isDone && <DoneIcon />}</DiveDone>
           </DivCameraBox>
-          <VerificationTextStyled>Position your face</VerificationTextStyled>
-          <VerificationSmallTextStyled>
-            Keep your face within the oval to <br /> start recording and follow the instructions
-          </VerificationSmallTextStyled>
+          <VerificationTextStyled>{instruction}</VerificationTextStyled>
+          <VerificationSmallTextStyled>{description}</VerificationSmallTextStyled>
+          <DivWords>{words.length > 0 && words}</DivWords>
         </VerificationStyled>
         <CameraBottomWithButton isVideo onClick={startVideoRecording} onCancel={handleCancel} onReTake={handleRetake} />
       </DivMain>

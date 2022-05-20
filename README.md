@@ -4,8 +4,6 @@
 
 In the project directory, you can run:
 
-In root directory run:
-
 ### `node ./mock-server`
 
 To run the mock-server

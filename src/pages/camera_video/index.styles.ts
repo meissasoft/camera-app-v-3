@@ -26,6 +26,9 @@ export const VerificationTextStyled = styled.p`
   font-size: 20px;
   text-align: center;
   margin-bottom: 0px !important;
+  @media (max-width: 300px) {
+    font-size: 18px;
+  }
 `;
 export const VerificationSmallTextStyled = styled.p`
   margin-top: 4px !important ;
@@ -36,6 +39,9 @@ export const VerificationSmallTextStyled = styled.p`
   text-align: center;
   color: #e9e5e5;
   opacity: 0.6;
+  @media (max-width: 300px) {
+    font-size: 13px;
+  }
 `;
 export const DivCameraBox = styled.div<{ background: boolean }>`
   margin: 10px 0;
@@ -47,6 +53,14 @@ export const DivCameraBox = styled.div<{ background: boolean }>`
   background:  ${({ background }) => (background ? '#8daef9;' : '#323131;')} 
 
   border-color: #ffffff;
+  @media (max-width: 300px) {
+    width: 270px;
+    height: 270px;
+  }
+  @media (max-height: 667px) {
+    width: 270px;
+    height: 270px;
+  }
 `;
 export const Canvas = styled.canvas`
   display: none;
@@ -57,7 +71,13 @@ export const Video = styled.video<{ isDone: boolean }>`
   height: 334px;
   border-radius: 200px;
   object-fit: cover;
-  @media (max-width: 436px) {
+  @media (max-width: 300px) {
+    width: 265px;
+    height: 265px;
+  }
+  @media (max-height: 667px) {
+    width: 265px;
+    height: 265px;
   }
 `;
 
@@ -65,4 +85,11 @@ export const DiveDone = styled.div`
   position: absolute;
   margin-top: -175px;
   margin-left: 163px;
+`;
+export const DivWords = styled.div`
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
 `;
