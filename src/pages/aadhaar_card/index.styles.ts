@@ -20,3 +20,8 @@ export const DivBottom = styled.div`
   color: #121212;
   opacity: 0.6;
 `;
+export const DivHomeButton = styled.div`
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+`;

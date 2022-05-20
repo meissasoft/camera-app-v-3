@@ -6,7 +6,7 @@ import HeadingWithButton from '@/components/core/HeadingWithButton';
 import { useAppSelector } from '@/hooks/useReduxTypedHooks';
 import { getAppDataSelector } from '@/store/app';
 
-import { DivBottom, DivCard, DivMain } from './index.styles';
+import { DivBottom, DivCard, DivHomeButton, DivMain } from './index.styles';
 
 /**
  *
@@ -36,9 +36,11 @@ const AadhaarCard = () => {
       <div>
         <DivBottom> Make sure that your card details are clear to read with no blur or glare.</DivBottom>
       </div>
-      <Button className="m-auto" isBottom onClick={handleContinue}>
-        Continue
-      </Button>
+      <DivHomeButton>
+        <Button className="m-auto" isBottom onClick={handleContinue}>
+          Continue
+        </Button>
+      </DivHomeButton>
     </DivMain>
   );
 };
