@@ -32,6 +32,7 @@ import Header from '@/components/core/Header';
 const onClickHeaderIcon = () => {
   router.push('/verification');
 };
+
 const onClickContinue = () => {
   router.push('/camera_video');
 };
