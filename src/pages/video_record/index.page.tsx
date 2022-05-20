@@ -35,6 +35,7 @@ const onClickHeaderIcon = () => {
 const onClickContinue = () => {
   router.push('/camera_video');
 };
+
 const VideoRecord = () => {
   const { t } = useTranslation('video_record');
   return (
