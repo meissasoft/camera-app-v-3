@@ -53,7 +53,7 @@ const Verification = () => {
           <CardIcon />
         </VerificationCardStyled>
         <VerificationTextStyled>{t('heading')}</VerificationTextStyled>
-        <VerificationSmallTextStyled>{t('headingPara')}</VerificationSmallTextStyled>
+        <VerificationSmallTextStyled>{t('It will take less than 2 minutes')}</VerificationSmallTextStyled>
         <StepLayout
           rightIcon={verificationStep === 2 ? 'done' : 'arrow'}
           step={t('step1')}

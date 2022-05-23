@@ -6,7 +6,7 @@ import { TickIcon } from '@/assets/svg/tick-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 
-import { StyledLine, StyledLanguage, Row, DivMain, DivMarginTop } from './index.styles';
+import { StyledLine, StyledLanguage, Row, DivMain, DivMarginTop, FooterButtonStyle } from './index.styles';
 import { ILanguage } from './index.types';
 
 /**
@@ -103,11 +103,13 @@ const ChooseLangugae = () => {
           </>
         ))}
       </DivMarginTop>
-      <div className="button-container">
-        <Button isBottom onClick={handleContinue} className="m-auto">
-          Continue
-        </Button>
-      </div>
+      <FooterButtonStyle>
+        <div className="button-container">
+          <Button isBottom onClick={handleContinue} className="m-auto">
+            Continue
+          </Button>
+        </div>
+      </FooterButtonStyle>
     </DivMain>
   );
 };

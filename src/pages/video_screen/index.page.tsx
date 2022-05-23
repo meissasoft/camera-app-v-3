@@ -39,7 +39,7 @@ const VideoScreen = () => {
           <Header text="Record video" onClick={onClickHeaderIcon} />
 
           <VerificationCardStyled>
-            <video width="100%" height="420" controls>
+            <video width="100%" height="388" controls>
               <source src={recordedVideo} type="video/mp4" />
             </video>
           </VerificationCardStyled>
@@ -49,12 +49,12 @@ const VideoScreen = () => {
         </VerificationStyled>
       </DivMain>
       <DivBottomButton>
-        <Button className="m-auto" onClick={handleContinue}>
+        <Button isBottom className="m-auto" onClick={handleContinue}>
           Submit Video
         </Button>
       </DivBottomButton>
       <DivBottom>
-        <Button className="m-auto" onClick={handleRetake}>
+        <Button isBottom className="m-auto" onClick={handleRetake}>
           Re-take Video
         </Button>
       </DivBottom>

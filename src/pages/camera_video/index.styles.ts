@@ -20,7 +20,7 @@ export const VerificationCardStyled = styled.div`
 `;
 export const VerificationTextStyled = styled.p`
   color: ${COLORS.WHITE};
-  margin-top: 20px;
+  margin-top: 1%;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
