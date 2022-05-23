@@ -39,7 +39,7 @@ const VideoScreen = () => {
           <Header text="Record video" onClick={onClickHeaderIcon} />
 
           <VerificationCardStyled>
-            <video width="100%" height="420" controls>
+            <video width="100%" height="388" controls>
               <source src={recordedVideo} type="video/mp4" />
             </video>
           </VerificationCardStyled>
