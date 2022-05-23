@@ -1,7 +1,7 @@
 {
-  "header": "Get Started",
+  "get_started": "Get Started",
   "login": "Login",
-  "scan": "Scan QR",
+  "scan_qr": "Scan QR",
   "or": "Or",
-  "placeholder": "Enter Mobile Number"
+  "enter_mobile_number": "Enter Mobile Number"
 }

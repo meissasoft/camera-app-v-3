@@ -9,7 +9,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
-
 import Screenshot from '@/assets/png/video1.png';
 
 import {
@@ -45,9 +44,9 @@ const VideoRecord = () => {
     <>
       <DivMain>
         <VidoRecordStyled>
-          <Header text={t('header')} onClick={onClickHeaderIcon} />
-          <TextStyled>{t('heading')}</TextStyled>
-          <SmallTextStyled>{t('headingParagraph')}</SmallTextStyled>
+          <Header text={t('record_video')} onClick={onClickHeaderIcon} />
+          <TextStyled>{t('record_a_selfie_video')}</TextStyled>
+          <SmallTextStyled>{t('let’s_make_sure_nobody’s_improvising_you')}</SmallTextStyled>
         </VidoRecordStyled>
         <DivVideoStyled>
           <Image className="object-cover" src={Screenshot} />
@@ -58,13 +57,17 @@ const VideoRecord = () => {
             <DivGraterThenIconStyled className="col-1">
               <GreaterThenIcon />
             </DivGraterThenIconStyled>
-            <ParagraphInstructionPoint1Styled className="col-11">{t('option1')}</ParagraphInstructionPoint1Styled>
+            <ParagraphInstructionPoint1Styled className="col-11">
+              {t('speak_out_load_and_move_your_head')}
+            </ParagraphInstructionPoint1Styled>
           </div>
           <div className="row">
             <DivGraterThenIconStyled className="col-1">
               <GreaterThenIcon />
             </DivGraterThenIconStyled>
-            <ParagraphInstructionpoint2Styled className="col-11">{t('option2')}</ParagraphInstructionpoint2Styled>
+            <ParagraphInstructionpoint2Styled className="col-11">
+              {t('finish_actions_in_25_seconds')}
+            </ParagraphInstructionpoint2Styled>
           </div>
         </DivRappingStyled>
       </DivMain>

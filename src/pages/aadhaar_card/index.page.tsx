@@ -1,5 +1,7 @@
 import router from 'next/router';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 import HeadingWithButton from '@/components/core/HeadingWithButton';
@@ -20,29 +22,37 @@ const AadhaarCard = () => {
     router.push('/verification');
   };
 
+  const { t } = useTranslation('aadhaar_card');
+
   return (
     <DivMain>
-      <Header text="Aadhaar card" onClick={handleContinue} />
-      <HeadingWithButton text="Aadhaar card front side" />
+      <Header text={t('aadhaar_card')} onClick={handleContinue} />
+      <HeadingWithButton text={t('aadhaar_card_front_side')} retake={t('retake')} />
       <DivCard>
         <img src={cardFront} />
         {/* <AadhaarFront /> */}
       </DivCard>
-      <HeadingWithButton text="Aadhaar card Back side" />
+      <HeadingWithButton text={t('aadhaar_card_front_side')} retake={t('retake')} />
       <DivCard>
         <img src={cardBack} />
         {/* <AadhaarBack /> */}
       </DivCard>
       <div>
-        <DivBottom> Make sure that your card details are clear to read with no blur or glare.</DivBottom>
+        <DivBottom>{t('make_sure_that_your_card_details_are_clear_to_read_with_no_blur_or_glare')}</DivBottom>
       </div>
       <DivHomeButton>
         <Button className="m-auto" isBottom onClick={handleContinue}>
-          Continue
+          {t('continue')}
         </Button>
       </DivHomeButton>
     </DivMain>
   );
 };
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['aadhaar_card'])),
+  },
+});
 
 export default AadhaarCard;

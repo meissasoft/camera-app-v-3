@@ -12,7 +12,7 @@ function StepLayout({ step, content, isDisabled = false, heading, rightIcon, onC
       <div className=" d-flex">
         <div className="col-11">
           <DivLabel>
-            <DivStep>step{step}</DivStep>
+            <DivStep>{step}</DivStep>
           </DivLabel>
           <DivHeading>{heading}</DivHeading>
           <DivContent>{content}</DivContent>
