@@ -4,12 +4,15 @@ export const DivMain = styled.div`
   padding: 20px;
 `;
 export const VerificationStyled = styled.div`
-  padding: 20px 0px;
+  padding: 0px 0px;
   list-group-item: list-group-item-action;
 `;
 export const VerificationCardStyled = styled.div`
-  text-align: center;
-  margin: 20px 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0;
 `;
 export const VerificationSuccessfulTextStyled = styled.p`
   margin-top: 0px;

@@ -25,5 +25,5 @@ export const DivSvg = styled.div`
 export const DivTime = styled.div`
   text-align: center;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;

@@ -49,12 +49,12 @@ const VideoScreen = () => {
         </VerificationStyled>
       </DivMain>
       <DivBottomButton>
-        <Button className="m-auto" onClick={handleContinue}>
+        <Button isBottom className="m-auto" onClick={handleContinue}>
           Submit Video
         </Button>
       </DivBottomButton>
       <DivBottom>
-        <Button className="m-auto" onClick={handleRetake}>
+        <Button isBottom className="m-auto" onClick={handleRetake}>
           Re-take Video
         </Button>
       </DivBottom>
