@@ -51,5 +51,5 @@ export const DivMarginTop = styled.div`
   margin-top: -5px;
 `;
 export const FooterButtonStyle = styled.div`
-  margin-top: 2%;
+  margin-top: -12%;
 `;
