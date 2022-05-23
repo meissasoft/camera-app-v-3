@@ -52,11 +52,24 @@ export const DivDifference = styled.div`
 export const DivButton = styled.div`
   width: 100%;
   position: relative;
-  margin-top: 20%;
+  margin-top: 50%;
+  margin-bottom: 10%;
 `;
 export const DivVerificationCardStyled = styled.div`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+export const DivMainModelStyled = styled.div`
+  width: 100px;
+`;
+export const DivMainModelLineStyled = styled.div`
+  position: absolute;
+  width: 287px;
+  height: 0px;
+  left: 44px;
+  top: 200px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
 `;

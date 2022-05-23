@@ -85,7 +85,7 @@ const ChooseLangugae = () => {
   };
 
   const handleContinue = () => {
-    router.push(`${selectedLangugage}/login`);
+    router.push(`${selectedLangugage}/commence_video`);
   };
   return (
     <DivMain>

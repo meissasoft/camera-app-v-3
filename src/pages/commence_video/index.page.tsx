@@ -10,7 +10,7 @@ import Header from '@/components/core/Header';
 import Button from '@/components/core/Button';
 
 import { CardIcon } from '@/assets/svg/card-icon';
-import MyVerticallyCenteredModal from '../identify_document_modal/index.page';
+import MyCommenceCenteredModal from '@/components/CommenceVideomodel/index.page';
 import {
   DivButton,
   DivDifference,
@@ -22,7 +22,6 @@ import {
   IdentificationTextStyled,
   IdentifyText,
   Row,
-  StyledLine,
 } from './index.style';
 
 /**
@@ -75,7 +74,6 @@ const Commenceyourvideo = () => {
           <IdentificationSmallTextStyled>
             {t('Please keep your following documents handy before you proceed with your full KYC process.')}
           </IdentificationSmallTextStyled>
-          <StyledLine />
         </IdentificationStyled>
         <DocumentContainer>
           {document.map((doc, id) => (
@@ -96,18 +94,28 @@ const Commenceyourvideo = () => {
           </Button>
         </DivButton>
       </DivMain>
-      <MyVerticallyCenteredModal
+      <MyCommenceCenteredModal
         show={modalShow}
         onOk={onClicOk}
         onHide={() => setModalShow(false)}
-        heading={t('modalheading')}
-        paragraph={t('modalparagraph')}
-        dontAllow={t('modaldontAllow')}
-        ok={t('modalok')}
+        GreaterThenIcon={GreaterThenIcon}
+        heading={t('By clicking on ‘Agree’, you hereby:')}
+        paragraph1={t(
+          'Acknowledge the request made by Syntizen technologies private limited to provide personal details.'
+        )}
+        paragraph2={t(
+          'Provide my unconditional concent to access, copy and store all information there in by sharing the inofrmation.'
+        )}
+        paragraph3={t(
+          'Also undertake I/We are authorised to do so on behalf of the requestee organisation and tkae sole and complete responsibilitity for the same.'
+        )}
+        Disagree={t('Disagree')}
+        Agree={t('Agree')}
       />
     </>
   );
 };
+
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['commence_your_video'])),
