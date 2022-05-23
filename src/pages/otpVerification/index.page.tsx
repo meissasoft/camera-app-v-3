@@ -31,7 +31,7 @@ const VerifyOtp = () => {
   return (
     <DivMain>
       <div className="heading">
-        <Heading text={t('header')} onClick={handleBack} />
+        <Heading text={t('mobile_verification')} onClick={handleBack} />
       </div>
       <div className="inner">
         <BarIcon />
@@ -40,8 +40,8 @@ const VerifyOtp = () => {
         </div>
         <div className="my-5 text-center">
           <PasswordIcon />
-          <div className="title">{t('heading')}</div>
-          <p className="description">{t('paragraph')}</p>
+          <div className="title">{t('verification_code')}</div>
+          <p className="description">{t('please_enter_the_verification_code_we_sent_to_your_phone_number')}</p>
         </div>
         <OTPInput
           autoFocus
@@ -55,7 +55,7 @@ const VerifyOtp = () => {
         />
 
         <div className="d-flex w-100 justify-content-center align-items-center mt-4">
-          <span className="mx-2 code-text">{t('paragraph2')}</span>
+          <span className="mx-2 code-text">{t("i_did'nt_receive_a_code")}</span>
           <button className="btn btn-primary">
             <span className="text">{t('resend')}</span>
           </button>

@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { DivHeader, StyledText } from './HeadingButton.style';
 import { IHeaderProps } from './HeadingButton.types';
 
-function HeadingWithButton({ text }: IHeaderProps) {
+function HeadingWithButton({ text, retake }: IHeaderProps) {
   const onIconCLick = () => {
     router.push('/camera_pic');
   };
@@ -18,7 +18,7 @@ function HeadingWithButton({ text }: IHeaderProps) {
       </div>
       <div>
         <Button onClick={onIconCLick}>
-          <div className="text">Retake</div>
+          <div className="text">{retake}</div>
         </Button>
       </div>
     </DivHeader>

@@ -47,25 +47,25 @@ const Verification = () => {
 
   return (
     <DivMain>
-      <Header text={t('header')} onClick={onClickHeaderIcon} />
+      <Header text={t('identity_verification')} onClick={onClickHeaderIcon} />
       <VerificationStyled>
         <VerificationCardStyled>
           <CardIcon />
         </VerificationCardStyled>
-        <VerificationTextStyled>{t('heading')}</VerificationTextStyled>
-        <VerificationSmallTextStyled>{t('It will take less than 2 minutes')}</VerificationSmallTextStyled>
+        <VerificationTextStyled>{t('verify_your_identity')}</VerificationTextStyled>
+        <VerificationSmallTextStyled>{t('it_will_take_less_than_2_minutes')}</VerificationSmallTextStyled>
         <StepLayout
           rightIcon={verificationStep === 2 ? 'done' : 'arrow'}
           step={t('step1')}
-          heading={t('heading2')}
-          content={t('heading2para')}
+          heading={t('identity_document_verification')}
+          content={t('take_a_picture_of_an_identity_document_and_upload_it_for_verification')}
           onClick={onClickCard}
         />
         <StepLayout
           rightIcon="arrow"
-          step={2}
-          heading={t('heading3')}
-          content={t('heading3para')}
+          step={t('step2')}
+          heading={t('record_a_selfie_video')}
+          content={t('speak_out_load_and_move_your_head_finish_actions_in_25_seconds')}
           isDisabled={verificationStep === 2 ? false : true}
           onClick={goToVideo}
         />

@@ -39,7 +39,7 @@ const IdentityDocument = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const document = [
     {
-      name: t('adhaarcard'),
+      name: t('adhaar_card'),
       Svg: IdCardIcon,
     },
     {
@@ -50,7 +50,7 @@ const IdentityDocument = () => {
       name: t('licence'),
       Svg: DriverLincenceIcon,
     },
-    { name: t('voterid'), Svg: VoterIcon },
+    { name: t('voter_id'), Svg: VoterIcon },
   ];
 
   const onClickCard = () => {
@@ -63,9 +63,11 @@ const IdentityDocument = () => {
     <>
       <DivMain>
         <IdentificationStyled>
-          <Header isLongText onClick={onClickHeaderIcon} text={t('header')} />
-          <IdentificationTextStyled>{t('heading')}</IdentificationTextStyled>
-          <IdentificationSmallTextStyled>{t('headingParagraph')}</IdentificationSmallTextStyled>
+          <Header isLongText onClick={onClickHeaderIcon} text={t('identity_document_verification')} />
+          <IdentificationTextStyled>{t('select_a_documemt')}</IdentificationTextStyled>
+          <IdentificationSmallTextStyled>
+            {t('you_will_take_a_picture_of_it_in_next_steps')}
+          </IdentificationSmallTextStyled>
         </IdentificationStyled>
         <DocumentContainer>
           {document.map((doc, id) => (
@@ -88,10 +90,10 @@ const IdentityDocument = () => {
         show={modalShow}
         onOk={onClicOk}
         onHide={() => setModalShow(false)}
-        heading={t('modalheading')}
-        paragraph={t('modalparagraph')}
-        dontAllow={t('modaldontAllow')}
-        ok={t('modalok')}
+        heading={t('video_kyc_would_like_to_access_the_camera')}
+        paragraph={t('required_for_document_and_facial_capture')}
+        dontAllow={t("don't_allow")}
+        ok={t('ok')}
       />
     </>
   );

@@ -1,9 +1,9 @@
 {
-  "header": "Record video",
-  "heading": "Record a selfie video",
-  "headingParagraph": "Let’s make sure nobody’s improvising you",
+  "record_video": "Record video",
+  "record_a_selfie_video": "Record a selfie video",
+  "let’s_make_sure_nobody’s_improvising_you": "Let’s make sure nobody’s improvising you",
   "instruction": "Instructions",
-  "option1": "Speak out load and move your head",
-  "option2": "Finish actions in 25 seconds.",
+  "speak_out_load_and_move_your_head": "Speak out load and move your head",
+  "finish_actions_in_25_seconds": "Finish actions in 25 seconds.",
   "continue": "Continue"
 }
