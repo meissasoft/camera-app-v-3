@@ -21,11 +21,11 @@ const Login = () => {
   };
   return (
     <DivMain>
-      <Heading text={t('header')} onClick={handleBack} />
+      <Heading text={t('get_started')} onClick={handleBack} />
       <div className="inner">
         <MobileIcon />
         <FieldInput
-          placeholder={t('placeholder')}
+          placeholder={t('enter_mobile_number')}
           name={'mobile'}
           className="my-2 mt-5 m-auto rounded border p-2 loginInput"
         />
@@ -37,7 +37,7 @@ const Login = () => {
           <p className="separatorText mx-2 my-3">{t('or')}</p>
         </div>
         <Button isBottom onClick={handleLogin} className="my-2 m-auot">
-          {t('scan')}
+          {t('scan_qr')}
         </Button>
       </div>
     </DivMain>

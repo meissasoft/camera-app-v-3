@@ -93,12 +93,20 @@ const Verification = () => {
             <Video ref={videoRef}></Video>
             <Canvas ref={photoRef}></Canvas>
           </DivCameraBox>
-          <VerificationTextStyled>{isFront ? t('headingFront') : t('headingBack')}</VerificationTextStyled>
+          <VerificationTextStyled>{isFront ? t('front_of_the_card') : t('back_of_the_card')}</VerificationTextStyled>
           <VerificationSmallTextStyled>
-            {isFront ? t('headingParaFront') : t('headingParaBack')}
+            {isFront
+              ? t('position_the_front_of_the_card_in_the_frame')
+              : t('position_the_back_of_the_card_in_the_frame')}
           </VerificationSmallTextStyled>
         </VerificationStyled>
-        <CameraBottomWithButton onClick={takePhoto} onCancel={handleCancel} onReTake={handleRetake} />
+        <CameraBottomWithButton
+          onClick={takePhoto}
+          onCancel={handleCancel}
+          onReTake={handleRetake}
+          cancel={t('cancel')}
+          retake={t('retake')}
+        />
       </DivMain>
     </>
   );
