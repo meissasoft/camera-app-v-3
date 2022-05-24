@@ -28,7 +28,7 @@ export const IdentificationSmallTextStyled = styled.p`
 export const StyledLine = styled.hr`
   opacity: 0.6;
 
-  margin: 15px 5px 15px 0px;
+  // margin: 15px 5px 15px 0px;
   background-color: rgba(0, 0, 0, 0.1);
 `;
 

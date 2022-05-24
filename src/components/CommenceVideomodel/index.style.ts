@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { COLORS } from '@/constants/colors';
 
 export const DivModelButton = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ export const DivModelButton2 = styled.div`
 `;
 export const ParagraphModel = styled.p`
   margin-right: 17%;
-  margin-bottom: 5px;
+  margin-bottom: 18px;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -44,7 +45,7 @@ export const BodyModalStyled = styled.div`
   border-radius: 10px;
   position: absolute;
   width: 327px;
-  height: 454px;
+  height: 484px;
   left: calc(50% - 327px / 2 + 0.5px);
   top: calc(100% - 500px / 2);
   background: rgba(0, 0, 0, 0.8);
@@ -87,7 +88,9 @@ export const BodyModalStyled = styled.div`
     border-left: 0px solid rgba(60, 60, 67, 0.29);
   }
   .box {
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 `;
 export const ParagraphTextModel = styled.p`
@@ -116,6 +119,70 @@ export const CenterModel = styled.p`
   bottom: 0px;
   background: rgba(60, 60, 67, 0.29);
 `;
+
 export const GreaterThenModel = styled.p`
-  margin-top: 5%;
+  margin-top: 0%;
+`;
+export const CenterHeaderModel = styled.p`
+  margin-left: 60px;
+`;
+export const RowTextModel = styled.p`
+  margin-top: 0px;
+`;
+export const ButtonModel = styled.p`
+  margin-top: 0px;
+`;
+export const Button1Model = styled.p`
+  width: 80px;
+  height: 40px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  /* identical to box height */
+
+  text-align: center;
+  text-align: center;
+  margin-left: -20px;
+  margin-top: -10px;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(269.82deg, #38a1f7 0.1%, #38568f 99.85%);
+  border-radius: 5px;
+`;
+export const Button2Model = styled.p`
+  width: 104px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: -10px;
+  text-align: center;
+  height: 40px;
+  background: linear-gradient(90deg, ${COLORS.FAUX_CHINESE_BLUE} 0%, ${COLORS.SKY_100} 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border-radius: 5px;
+`;
+export const CrossButtonModel = styled.div`
+  margin-left: 16px;
+  margin-bottom: 10px;
+`;
+export const ButtonBorderModel = styled.p`
+  width: 104px;
+  // margin-bottom: -10px;
+  height: 40px;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(269.82deg, #38a1f7 0.1%, #38568f 99.85%);
+  opacity: 0.1;
+  border-radius: 5px;
+  margin-bottom: -32px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
 `;

@@ -22,6 +22,7 @@ import {
   IdentificationTextStyled,
   IdentifyText,
   Row,
+  StyledLine,
 } from './index.style';
 
 /**
@@ -76,6 +77,7 @@ const Commenceyourvideo = () => {
           </IdentificationSmallTextStyled>
         </IdentificationStyled>
         <DocumentContainer>
+          <StyledLine />
           {document.map((doc, id) => (
             <>
               <Row onClick={onClickCard} key={id}>
