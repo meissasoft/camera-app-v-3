@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Modal } from 'react-bootstrap';
 import { COLORS } from '@/constants/colors';
 
 export const DivModelButton = styled.div`
@@ -22,27 +23,23 @@ export const ParagraphModel = styled.p`
   font-weight: 400;
   font-size: 17px;
   line-height: 22px;
-
   text-align: center;
   letter-spacing: -0.408px;
-
-  color: #000000;
-
+  color: #6e6e6f;
   flex: none;
   order: 0;
   flex-grow: 0;
 `;
 export const ParagraphText1Model = styled.span`
   font-weight: 600;
+  color: black;
 `;
 export const BodyModalStyled = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
   background: #ffffff;
-  border-radius: 10px;
   position: absolute;
   width: 327px;
   height: 484px;
@@ -89,18 +86,27 @@ export const BodyModalStyled = styled.div`
   }
   .box {
     width: 90%;
+    height: 20px;
+    margin-top: 8%;
     margin-left: 5%;
     margin-right: 5%;
   }
 `;
+// export const LineModel = styled.span`
+//   width: 90%;
+//   margin-left: 5%;
+//   margin-right: 5%;
+//   margin-top: 0px;
+// `;
 export const ParagraphTextModel = styled.p`
   font-style: normal;
   font-weight: 400;
+  font-size: 16px;
   line-height: 24px;
   margin-bottom: 0;
   text-align: left;
   letter-spacing: -0.078px;
-  color: #000000;
+  color: #6e6e6f;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -124,7 +130,8 @@ export const GreaterThenModel = styled.p`
   margin-top: 0%;
 `;
 export const CenterHeaderModel = styled.p`
-  margin-left: 60px;
+  margin-left: 50px;
+  text-align: center;
 `;
 export const RowTextModel = styled.p`
   margin-top: 0px;
@@ -168,21 +175,26 @@ export const Button2Model = styled.p`
   border-radius: 5px;
 `;
 export const CrossButtonModel = styled.div`
-  margin-left: 16px;
-  margin-bottom: 10px;
+  margin-right: -20px;
+  margin-bottom: 18.88px;
 `;
 export const ButtonBorderModel = styled.p`
   width: 104px;
-  // margin-bottom: -10px;
+  margin-bottom: -10px;
   height: 40px;
   text-align: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(269.82deg, #38a1f7 0.1%, #38568f 99.85%);
   opacity: 0.1;
   border-radius: 5px;
-  margin-bottom: -32px;
+  margin-bottom: -35px;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
+`;
+export const Center1Model = styled(Modal)`
+  & > div > div {
+    border: none !important;
+  }
 `;

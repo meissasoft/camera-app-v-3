@@ -6,6 +6,7 @@ import {
   Button1Model,
   Button2Model,
   ButtonBorderModel,
+  Center1Model,
   CenterHeaderModel,
   CrossButtonModel,
   IineModel,
@@ -33,17 +34,21 @@ interface Props {
 function MyCommenceCenteredModal({ show, onHide, onOk }: Props) {
   return (
     <>
-      <Modal className="modal-cont" show={show} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+      <Center1Model
+        className="modal-cont"
+        show={show}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
         <BodyModalStyled>
           <Modal.Header className="box">
             <Modal.Title>
-              <CenterHeaderModel>User Consent</CenterHeaderModel>
+              <CenterHeaderModel className="col-11">User Consent</CenterHeaderModel>
             </Modal.Title>
-            <div className="col-1" onClick={onHide}>
-              <CrossButtonModel>
-                <CrossIcon />
-              </CrossButtonModel>
-            </div>
+            <CrossButtonModel className="col-1" onClick={onHide}>
+              <CrossIcon />
+            </CrossButtonModel>
           </Modal.Header>
           <Modal.Body>
             <ParagraphModel>
@@ -100,7 +105,7 @@ function MyCommenceCenteredModal({ show, onHide, onOk }: Props) {
             </div>
           </Modal.Footer>
         </BodyModalStyled>
-      </Modal>
+      </Center1Model>
     </>
   );
 }
