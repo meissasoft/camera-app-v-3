@@ -1,6 +1,7 @@
 import { Button, Modal } from 'react-bootstrap';
 import { CrossIcon } from '@/assets/svg/crossIcon';
-import { BodyModalStyled, IineModel, ParagraphModel, ParagraphTextModel } from './index.style';
+import { BodyModalStyled, IineModel, ParagraphModel, ParagraphText1Model, ParagraphTextModel } from './index.style';
+import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
 
 interface Props {
   show?: boolean;
@@ -17,18 +18,7 @@ interface Props {
   GreaterThenIcon?: any;
 }
 
-function MyCommenceCenteredModal({
-  show,
-  onHide,
-  onOk,
-  heading,
-  paragraph1,
-  paragraph2,
-  paragraph3,
-  Disagree,
-  Agree,
-  GreaterThenIcon,
-}: Props) {
+function MyCommenceCenteredModal({ show, onHide, onOk, Disagree, Agree }: Props) {
   return (
     <>
       <Modal className="modal-cont" show={show} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -39,15 +29,17 @@ function MyCommenceCenteredModal({
           </Modal.Header>
           {/* <StyledLine /> */}
           <Modal.Body>
-            <ParagraphModel>{heading}</ParagraphModel>
+            <ParagraphModel>
+              By clicking on <ParagraphText1Model>‘Agree’</ParagraphText1Model>, you hereby:
+            </ParagraphModel>
             <div className="row">
               <div className="col-1">
-                {' '}
                 <GreaterThenIcon />
               </div>
               <div className="col-11">
-                {' '}
-                <ParagraphTextModel>{paragraph1}</ParagraphTextModel>
+                <ParagraphTextModel>
+                  Acknowledge the request made by Syntizen technologies private limited to provide personal details.
+                </ParagraphTextModel>
               </div>
             </div>
             <div className="row">
@@ -55,7 +47,10 @@ function MyCommenceCenteredModal({
                 <GreaterThenIcon />
               </div>
               <div className="col-11">
-                <ParagraphTextModel>{paragraph2}</ParagraphTextModel>
+                <ParagraphTextModel>
+                  Provide my unconditional concent to access, copy and store all information therein by sharing the
+                  inofrmation.
+                </ParagraphTextModel>
               </div>
             </div>
             <div className="row">
@@ -63,7 +58,10 @@ function MyCommenceCenteredModal({
                 <GreaterThenIcon />
               </div>
               <div className="col-11">
-                <ParagraphTextModel>{paragraph3}</ParagraphTextModel>
+                <ParagraphTextModel>
+                  Also undertake I/We are authorised to do so on behalf of the requestee organisation and tkae sole and
+                  complete responsibilitity for the same.
+                </ParagraphTextModel>
               </div>
             </div>
           </Modal.Body>

@@ -15,9 +15,10 @@ export const DivModelButton2 = styled.div`
   flex-grow: 6;
 `;
 export const ParagraphModel = styled.p`
+  margin-right: 17%;
   margin-bottom: 5px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 17px;
   line-height: 22px;
 
@@ -29,6 +30,9 @@ export const ParagraphModel = styled.p`
   flex: none;
   order: 0;
   flex-grow: 0;
+`;
+export const ParagraphText1Model = styled.span`
+  font-weight: 600;
 `;
 export const BodyModalStyled = styled.div`
   border-radius: 10px;
@@ -87,11 +91,10 @@ export const BodyModalStyled = styled.div`
   }
 `;
 export const ParagraphTextModel = styled.p`
-  margin-bottom: 0;
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
+  line-height: 24px;
+  margin-bottom: 0;
   text-align: left;
   letter-spacing: -0.078px;
   color: #000000;
@@ -112,4 +115,7 @@ export const CenterModel = styled.p`
   left: calc(50% - 0.5px / 2 - 0.25px);
   bottom: 0px;
   background: rgba(60, 60, 67, 0.29);
+`;
+export const GreaterThenModel = styled.p`
+  margin-top: 5%;
 `;
