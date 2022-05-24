@@ -1,7 +1,7 @@
 import { Button, Modal } from 'react-bootstrap';
 import { CrossIcon } from '@/assets/svg/crossIcon';
-import { BodyModalStyled, IineModel, ParagraphModel, ParagraphText1Model, ParagraphTextModel } from './index.style';
 import { GreaterThenIcon } from '@/assets/svg/greaterthen-icon';
+import { BodyModalStyled, IineModel, ParagraphModel, ParagraphText1Model, ParagraphTextModel } from './index.style';
 
 interface Props {
   show?: boolean;
