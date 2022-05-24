@@ -92,12 +92,6 @@ export const BodyModalStyled = styled.div`
     margin-right: 5%;
   }
 `;
-// export const LineModel = styled.span`
-//   width: 90%;
-//   margin-left: 5%;
-//   margin-right: 5%;
-//   margin-top: 0px;
-// `;
 export const ParagraphTextModel = styled.p`
   font-style: normal;
   font-weight: 400;
