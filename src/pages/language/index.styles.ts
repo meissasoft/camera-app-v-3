@@ -3,14 +3,16 @@ import styled from '@emotion/styled';
 import { COLORS } from '@/constants/colors';
 
 export const DivMain = styled.div`
-  padding: 20px;
-  .button-container {
-    width: 100%;
-    margin-top: 48px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 40px);
+  @media (max-height: 720px) {
+    height: calc(100vh - 110px);
+  }
+  @media (max-height: 670px) {
+    height: calc(100vh - 40px);
   }
 `;
 
@@ -49,7 +51,10 @@ export const StyledColor = styled.div`
 `;
 export const DivMarginTop = styled.div`
   margin-top: -5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 200px);
 `;
 export const FooterButtonStyle = styled.div`
-  margin-top: -12%;
+  width: 100%;
 `;

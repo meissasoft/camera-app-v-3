@@ -3,4 +3,7 @@ export type CameraBottomWithButtonProps = {
   isVideo?: boolean;
   onCancel?: any;
   onReTake?: any;
+  cancel?: any;
+  retake?: any;
+  counter?: string;
 };

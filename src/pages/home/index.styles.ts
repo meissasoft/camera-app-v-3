@@ -1,7 +1,18 @@
 import styled from '@emotion/styled';
 
 export const BixDiv = styled.div`
-  margin: 0px 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+  height: calc(100vh - 40px);
+  @media (max-height: 720px) {
+    height: calc(100vh - 110px);
+  }
+  @media (max-height: 670px) {
+    height: calc(100vh - 40px);
+  }
 `;
 export const DivWrapper = styled.div`
   width: 100%;
@@ -16,7 +27,6 @@ export const DivHeading = styled.div`
   margin-top: 104px;
 `;
 export const DivLayout = styled.div`
-  height: 90vh;
   display: flex;
   flex-direction: column;
   align-content: space-between;
@@ -24,6 +34,4 @@ export const DivLayout = styled.div`
 `;
 export const DivHomeButton = styled.div`
   width: 100%;
-  position: relative;
-  margin-top: 4%;
 `;

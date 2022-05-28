@@ -1,5 +1,5 @@
 export type StepsLayoutProps = {
-  step?: number;
+  step?: string;
   heading?: string;
   content?: string;
   rightIcon?: 'arrow' | 'done';

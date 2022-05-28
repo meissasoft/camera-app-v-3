@@ -1,6 +1,6 @@
 import router from 'next/router';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -10,10 +10,10 @@ import Header from '@/components/core/Header';
 import Button from '@/components/core/Button';
 
 import { CardIcon } from '@/assets/svg/card-icon';
-import MyCommenceCenteredModal from '@/components/CommenceVideomodel/index.page';
+
+import MyCommenceCenteredModal from '@/components/CommenceVideomodel';
 import {
   DivButton,
-  DivDifference,
   DivMain,
   DivVerificationCardStyled,
   DocumentContainer,
@@ -27,100 +27,89 @@ import {
 
 /**
  *
- * @returns Verification document page
+ * @returns Commence Video Page
  */
 
 const onClickHeaderIcon = () => {
-  router.push('/verification');
+  router.push('/language');
 };
 
 const Commenceyourvideo = () => {
-  const { t } = useTranslation('commence_your_video');
-  const [modalShow, setModalShow] = React.useState(false);
+  const { t } = useTranslation('commence_video');
+  const [modalShow, setModalShow] = useState<boolean>(false);
+
   const document = [
     {
-      name: t('Aadhaar Verification'),
+      name: t('aadhaar_verification'),
       Svg: GreaterThenIcon,
     },
     {
-      name: t('PAN Capture'),
+      name: t('video_call_(q&a)'),
       Svg: GreaterThenIcon,
     },
     {
-      name: t('Live Photo'),
+      name: t('photo_capture'),
       Svg: GreaterThenIcon,
     },
-    { name: t('Video Call (Liveness check)'), Svg: GreaterThenIcon },
+    {
+      name: t('pan_capture'),
+      Svg: GreaterThenIcon,
+    },
+    {
+      name: t('signature_capture'),
+      Svg: GreaterThenIcon,
+    },
   ];
 
-  const onClickCard = () => {
-    setModalShow(true);
+  const onAgree = () => {
+    router.push('/aadhaar_number');
+  };
+
+  const onDisAgree = () => {
+    setModalShow(false);
   };
   const handleStart = () => {
-    router.push('/language');
+    setModalShow(true);
   };
-  const onClicOk = () => {
-    router.push('/camera_pic');
-  };
-  return (
-    <>
-      <DivMain>
-        <IdentificationStyled>
-          <Header isLongText onClick={onClickHeaderIcon} text={t('Commence your video KYC')} />
 
+  return (
+    <DivMain>
+      <div>
+        <Header onClick={onClickHeaderIcon} text={t('commence_your_video_kyc')} />
+        <IdentificationStyled>
           <DivVerificationCardStyled>
             <CardIcon />
           </DivVerificationCardStyled>
-          <IdentificationTextStyled>{t('Verify your identity')}</IdentificationTextStyled>
+          <IdentificationTextStyled>{t('verify_your_identity')}</IdentificationTextStyled>
           <IdentificationSmallTextStyled>
-            {t('Please keep your following documents handy before you proceed with your full KYC process.')}
+            {t('please_keep_your_following_documents_handy_before_you_proceed_with_your_full_kyc_process.')}
           </IdentificationSmallTextStyled>
         </IdentificationStyled>
+        <StyledLine />
         <DocumentContainer>
-          <StyledLine />
           {document.map((doc, id) => (
-            <>
-              <Row onClick={onClickCard} key={id}>
-                <div className="col-1">{doc.Svg()}</div>
-                <DivDifference />
-                <div className="col-11">
-                  <IdentifyText>{doc.name}</IdentifyText>
-                </div>
-              </Row>
-            </>
+            <Row key={id} onClick={handleStart}>
+              <div className="col-1">{doc.Svg()}</div>
+              <div className="col-11">
+                <IdentifyText>{doc.name}</IdentifyText>
+              </div>
+            </Row>
           ))}
         </DocumentContainer>
-        <DivButton>
-          <Button onClick={handleStart} className="m-auto">
-            Start
-          </Button>
-        </DivButton>
-      </DivMain>
-      <MyCommenceCenteredModal
-        show={modalShow}
-        onOk={onClicOk}
-        onHide={() => setModalShow(false)}
-        GreaterThenIcon={GreaterThenIcon}
-        heading={t('By clicking on ‘Agree’, you hereby:')}
-        paragraph1={t(
-          'Acknowledge the request made by Syntizen technologies private limited to provide personal details.'
-        )}
-        paragraph2={t(
-          'Provide my unconditional concent to access, copy and store all information there in by sharing the inofrmation.'
-        )}
-        paragraph3={t(
-          'Also undertake I/We are authorised to do so on behalf of the requestee organisation and tkae sole and complete responsibilitity for the same.'
-        )}
-        Disagree={t('Disagree')}
-        Agree={t('Agree')}
-      />
-    </>
+      </div>
+      <DivButton>
+        <Button isBottom onClick={handleStart} className="m-auto">
+          {t('start')}
+        </Button>
+      </DivButton>
+      <MyCommenceCenteredModal show={modalShow} onAgree={onAgree} onDisagree={onDisAgree} onHide={onDisAgree} />
+    </DivMain>
   );
 };
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['commence_your_video'])),
+    ...(await serverSideTranslations(locale, ['commence_video', 'aadhaar_xml'])),
   },
 });
 

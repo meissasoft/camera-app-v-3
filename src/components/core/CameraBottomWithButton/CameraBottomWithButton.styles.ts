@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Div = styled.div`
-  position: absolute;
-  bottom: 0px;
-  width: 90%;
+  width: 100%;
   color: white;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const DivContent = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 20px 0px;
 `;
 export const DivButton = styled.div`
   display: flex;

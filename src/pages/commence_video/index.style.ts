@@ -1,12 +1,21 @@
 import styled from '@emotion/styled';
+import { COLORS } from '@/constants/colors';
 
 export const DivMain = styled.div`
-  padding: 20px;
+  margin: 20px;
+  height: calc(100vh - 40px);
+  @media (max-height: 720px) {
+    height: calc(100vh - 110px);
+  }
+  @media (max-height: 670px) {
+    height: calc(100vh - 40px);
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 export const IdentificationStyled = styled.p`
-  padding: 20px 0px;
   text-align: center;
-  list-group-item: list-group-item-action;
 `;
 export const IdentificationTextStyled = styled.p`
   margin-top: 20px;
@@ -22,13 +31,11 @@ export const IdentificationSmallTextStyled = styled.p`
   font-weight: 400;
   font-size: 18px;
   text-align: center;
-  color: #121212;
+  color: ${COLORS.GREY_12};
   opacity: 0.6;
 `;
 export const StyledLine = styled.hr`
   opacity: 0.6;
-
-  // margin: 15px 5px 15px 0px;
   background-color: rgba(0, 0, 0, 0.1);
 `;
 
@@ -42,18 +49,16 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
+  margin-top: 20px;
 `;
 export const DocumentContainer = styled.div`
   margin-left: 10px;
+  margin-top: 20px;
 `;
-export const DivDifference = styled.div`
-  margin-top: 45px;
-`;
+
 export const DivButton = styled.div`
   width: 100%;
-  position: relative;
-  margin-top: 50%;
-  margin-bottom: 10%;
 `;
 export const DivVerificationCardStyled = styled.div`
   position: relative;

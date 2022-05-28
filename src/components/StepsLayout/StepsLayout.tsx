@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ArrowRight } from '@/assets/svg/arrow-right';
-import { DoneIcon } from '@/assets/svg/done-icon';
+import { DoneIconBlue } from '@/assets/svg/done-icon-blue';
 
 import { DivContent, DivHeading, DivIcon, DivLabel, DivStep, DivStepLayout } from './StepsLayout.style';
 import { StepsLayoutProps } from './StepsLayout.types';
@@ -18,7 +18,7 @@ function StepLayout({ step, content, isDisabled = false, heading, rightIcon, onC
           <DivContent>{content}</DivContent>
         </div>
         <DivIcon>
-          <div className="col-1 divIcon">{rightIcon === 'done' ? <DoneIcon /> : <ArrowRight />}</div>
+          <div className="col-1 divIcon">{rightIcon === 'done' ? <DoneIconBlue /> : <ArrowRight />}</div>
         </DivIcon>
       </div>
     </DivStepLayout>
