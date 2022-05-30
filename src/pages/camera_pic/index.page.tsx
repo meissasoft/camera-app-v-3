@@ -71,7 +71,7 @@ const CameraPic = () => {
     } else if (cardBack.length < 5) {
       setcardBack(dataUrl);
       dispatch(setCardBack(dataUrl));
-      router.push('/aadhaar_card');
+      router.push('/pan_card');
     }
   };
 

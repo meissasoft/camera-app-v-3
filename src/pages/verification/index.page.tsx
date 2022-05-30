@@ -8,7 +8,7 @@ import { CardIcon } from '@/assets/svg/card-icon';
 import Header from '@/components/core/Header';
 import StepLayout from '@/components/StepsLayout';
 import { useAppDispatch, useAppSelector } from '@/hooks/useReduxTypedHooks';
-import { setVerificationStep, getAppDataSelector } from '@/store/app';
+import { getAppDataSelector } from '@/store/app';
 
 import MyVerticallyCenteredModal from '@/components/core/identify_document_modal';
 import {
@@ -28,9 +28,7 @@ const Verification = () => {
   const { verificationStep } = useAppSelector(getAppDataSelector);
   const [modalShow, setModalShow] = useState(false);
 
-  const { t } = useTranslation('verification');
-
-  const dispatch = useAppDispatch();
+  const { t } = useTranslation(['verification', 'identity_document']);
 
   const onClickHeaderIcon = () => {
     if (verificationStep === 2) {
@@ -40,11 +38,6 @@ const Verification = () => {
     router.push('/otpVerification');
   };
 
-  const onClickCard = () => {
-    router.push('/camera_pic');
-    setTimeout(setStep, 3000);
-  };
-
   const goToVideo = () => {
     router.push('/camera_video');
   };
@@ -52,13 +45,14 @@ const Verification = () => {
     router.push('/keeps_things_handy');
   };
 
-  const setStep = () => {
-    dispatch(setVerificationStep(2));
-  };
-
   const onClicOk = () => {
     router.push('/camera_pic');
   };
+
+  const handleStart = () => {
+    setModalShow(true);
+  };
+
   return (
     <DivMain>
       <Header text={t('identity_verification')} onClick={onClickHeaderIcon} />
@@ -71,25 +65,24 @@ const Verification = () => {
         <StepLayout
           rightIcon={verificationStep === 2 || verificationStep === 3 ? 'done' : 'arrow'}
           step={t('step1')}
-          heading={t('identity_document_verification')}
+          heading={t('pan_card_verification')}
           content={t('take_a_picture_of_an_identity_document_and_upload_it_for_verification')}
-          onClick={onClickCard}
+          onClick={handleStart}
         />
         <StepLayout
           rightIcon={verificationStep === 3 ? 'done' : 'arrow'}
           step={t('step2')}
-          heading={t('record_a_selfie_video')}
-          content={t('speak_out_load_and_move_your_head_finish_actions_in_25_seconds')}
+          heading={t('live_photo_check')}
+          content={t('speak_out_load_and_move_your_head_finish_actions_in_25_seconds.')}
           isDisabled={verificationStep === 2 || verificationStep === 3 ? false : true}
           onClick={goToVideo}
         />
         {/* //to be added in translation */}
         <StepLayout
           rightIcon="arrow"
-          step="Step 3"
-          heading="VCIP"
-          content="Schedule a video call session with our 
-          agent and follow the instructions"
+          step={t('step3')}
+          heading={t('vcip')}
+          content={t('schedule_a_video_call_session_with_our_agent_and_follow_the_instructions.')}
           isDisabled={verificationStep === 3 ? false : true}
           onClick={goToKeepThingHandy}
         />
@@ -97,10 +90,10 @@ const Verification = () => {
           show={modalShow}
           onOk={onClicOk}
           onHide={() => setModalShow(false)}
-          heading="Video kyc would like to access the camera"
-          paragraph="Required for document and facial capture"
-          dontAllow="don't allow"
-          ok="ok"
+          heading={t('video_kyc_would_like_to_access_the_camera')}
+          paragraph={t('required_for_document_and_facial_capture')}
+          dontAllow={t("don't_allow")}
+          ok={t('ok')}
         />
       </VerificationStyled>
     </DivMain>
@@ -108,7 +101,7 @@ const Verification = () => {
 };
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['verification'])),
+    ...(await serverSideTranslations(locale, ['verification', 'identity_document'])),
   },
 });
 export default Verification;

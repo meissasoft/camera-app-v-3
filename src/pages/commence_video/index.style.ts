@@ -58,6 +58,7 @@ export const DocumentContainer = styled.div`
 `;
 
 export const DivButton = styled.div`
+  margin-top: 20px;
   width: 100%;
 `;
 export const DivVerificationCardStyled = styled.div`

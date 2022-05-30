@@ -57,7 +57,7 @@ const LiveCameraPhoto = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/pan_card_photo');
+      router.push('/signature_captured');
     }, 10000);
   }, [mediaStream]);
 

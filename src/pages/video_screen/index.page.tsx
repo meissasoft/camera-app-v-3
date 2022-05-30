@@ -21,7 +21,7 @@ const VideoScreen = () => {
   const { recordedVideo } = useAppSelector(getAppDataSelector);
 
   const onClickHeaderIcon = () => {
-    router.push('/camera_video');
+    router.push('/verification');
   };
   const handleContinue = () => {
     dispatch(setVerificationStep(3));
@@ -34,14 +34,14 @@ const VideoScreen = () => {
   return (
     <DivMain>
       <div>
-        <Header text={t('record_video')} onClick={onClickHeaderIcon} />
+        <Header text={t('selfie_photo_confirmation')} onClick={onClickHeaderIcon} />
         <VideoCardStyled>
           <video width="100%" height="388" controls playsInline>
             <source src={recordedVideo} type="video/mp4" />
           </video>
         </VideoCardStyled>
         <VideoCardText>
-          {t('if_you_are_not_satified_with_your_selfie_video_we_suggest_you_to_re-take_it')}
+          {t('if_you_are_not_satified_with_your_selfie_photo,_we_suggest_you_to_re-take_it.')}
         </VideoCardText>
       </div>
       <DivBottom>

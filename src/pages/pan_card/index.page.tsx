@@ -5,8 +5,8 @@ import { useTranslation } from 'next-i18next';
 import Button from '@/components/core/Button';
 import Header from '@/components/core/Header';
 import HeadingWithButton from '@/components/core/HeadingWithButton';
-import { useAppSelector } from '@/hooks/useReduxTypedHooks';
-import { getAppDataSelector } from '@/store/app';
+import { useAppDispatch, useAppSelector } from '@/hooks/useReduxTypedHooks';
+import { getAppDataSelector, setVerificationStep } from '@/store/app';
 
 import { DivBottom, DivCard, DivHomeButton, DivMain } from './index.styles';
 
@@ -17,21 +17,26 @@ import { DivBottom, DivCard, DivHomeButton, DivMain } from './index.styles';
 
 const AadhaarCard = () => {
   const { cardFront, cardBack } = useAppSelector(getAppDataSelector);
+  const dispatch = useAppDispatch();
 
   const handleContinue = () => {
+    dispatch(setVerificationStep(2));
     router.push('/verification');
   };
+  const handleBack = () => {
+    router.push('/camera_pic');
+  };
 
-  const { t } = useTranslation('aadhaar_card');
+  const { t } = useTranslation('pan_card');
 
   return (
     <DivMain>
-      <Header text={t('aadhaar_card')} onClick={handleContinue} />
-      <HeadingWithButton text={t('aadhaar_card_front_side')} retake={t('retake')} />
+      <Header text={t('pan_card')} onClick={handleBack} />
+      <HeadingWithButton text={t('pan_card_front_side')} retake={t('retake')} />
       <DivCard>
         <img src={cardFront} width="100%" height="205px" />
       </DivCard>
-      <HeadingWithButton text={t('aadhaar_card_back_side')} retake={t('retake')} />
+      <HeadingWithButton text={t('pan_card_back_side')} retake={t('retake')} />
       <DivCard>
         <img src={cardBack} width="100%" height="205px" />
       </DivCard>
@@ -47,7 +52,7 @@ const AadhaarCard = () => {
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['aadhaar_card'])),
+    ...(await serverSideTranslations(locale, ['pan_card'])),
   },
 });
 
