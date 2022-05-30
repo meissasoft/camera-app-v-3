@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { CardIcon } from '@/assets/svg/card-icon';
 import Header from '@/components/core/Header';
 import StepLayout from '@/components/StepsLayout';
-import { useAppDispatch, useAppSelector } from '@/hooks/useReduxTypedHooks';
+import { useAppSelector } from '@/hooks/useReduxTypedHooks';
 import { getAppDataSelector } from '@/store/app';
 
 import MyVerticallyCenteredModal from '@/components/core/identify_document_modal';
