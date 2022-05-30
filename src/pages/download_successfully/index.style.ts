@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { COLORS } from '@/constants/colors';
 export const DivMain = styled.div`
   padding: 20px;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 4px);
   @media (max-height: 720px) {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 70px);
   }
   @media (max-height: 670px) {
     height: calc(100vh - 40px);
@@ -46,6 +46,7 @@ export const DivContentBody = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  height: 70vh;
 `;
 
 export const DivContent = styled.div`

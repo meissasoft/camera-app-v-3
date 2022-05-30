@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-
 import { COLORS } from '@/constants/colors';
-
 export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor?: string; isTransparent?: boolean }>`
   ${({ isTransparent }) =>
     isTransparent
@@ -12,7 +10,7 @@ export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor
 `
       : `
   border: 0px;
-  background-image: linear-gradient(to right, #38568f 0%, #38a1f7 100%, #38568f 100%);
+  background-image: linear-gradient(to right, #38568F 0%, #38A1F7 100%, #38568F 100%);
 `}
   margin-left: 18px;
   margin-right: 18px;
@@ -38,7 +36,6 @@ export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor
   background-size: 200% auto;
   box-shadow: 0 0 20px #eee;
   display: block;
-
   &:disabled {
     background-color: ${COLORS.GREY_90};
     cursor: not-allowed;
@@ -47,5 +44,5 @@ export const ButtonStyled = styled.button<{ backgroundColor?: string; hoverColor
     ${({ isTransparent }) =>
       isTransparent
         ? `background-image:none;`
-        : `background-image: linear-gradient(to right, #38568f 0%, #38a1f7 90%, #38568f 90%); `}
+        : `background-image: linear-gradient(to right, #38568F 0%, #38A1F7 90%, #38568F 90%); `}
 `;
