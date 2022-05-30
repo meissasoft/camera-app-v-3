@@ -1,30 +1,31 @@
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
-
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useUserMedia } from '@/hooks/useUserMedia';
-
 import BottomTextLivePhoto from '@/components/LivePhotoBottom';
-import { Canvas, DivCameraBox, DivMain, DivVideoBox, CameraStyled, CameraTextStyledWrapper } from './index.style';
-
+import {
+  Background,
+  Canvas,
+  DivCameraBox,
+  DivMain,
+  DivVideoBox,
+  CameraStyled,
+  CameraTextStyledWrapper,
+} from './index.style';
 /**
  *
  * @returns LiveCameraPhoto page
  */
-
 const LiveCameraPhoto = () => {
   const router = useRouter();
   const CAPTURE_OPTIONS = {
     audio: false,
     video: { facingMode: 'environment' },
   };
-
   const mediaStream = useUserMedia(CAPTURE_OPTIONS, false);
-
   const videoRef = useRef(null) as any;
   const videoRef1 = useRef(null) as any;
   const photoRef = useRef(null) as any;
-
   const takePhoto = () => {
     const width = 314;
     const height = width / (16 / 9);
@@ -37,7 +38,6 @@ const LiveCameraPhoto = () => {
     const dataUrl = photo.toDataURL();
     console.log('dataUrl', dataUrl);
   };
-
   useEffect(() => {
     if (mediaStream && videoRef.current && !videoRef.current.srcObject) {
       videoRef.current.setAttribute('autoplay', '');
@@ -54,33 +54,31 @@ const LiveCameraPhoto = () => {
       videoRef1.current.play();
     }
   }, [mediaStream]);
-
   useEffect(() => {
     setTimeout(() => {
-      router.push('/signature_captured');
-    }, 10000);
+      router.push('/pan_card_photo');
+    }, 15000);
   }, [mediaStream]);
-
   // for clear image
   // function handleClear() {
   //   const context = photoRef.current.getContext('2d');
   //   context.clearRect(0, 0, photoRef.current.width, photoRef.current.height);
   // }
-
   return (
-    <DivMain>
-      <CameraStyled>
-        <DivCameraBox ref={videoRef}></DivCameraBox>
-        <Canvas ref={photoRef}></Canvas>
-        <DivVideoBox ref={videoRef1} />
-      </CameraStyled>
-      <CameraTextStyledWrapper>
-        <BottomTextLivePhoto takePhoto={takePhoto} />
-      </CameraTextStyledWrapper>
-    </DivMain>
+    <Background>
+      <DivMain>
+        <CameraStyled>
+          <DivCameraBox ref={videoRef}></DivCameraBox>
+          <Canvas ref={photoRef}></Canvas>
+          <DivVideoBox ref={videoRef1} />
+        </CameraStyled>
+        <CameraTextStyledWrapper>
+          <BottomTextLivePhoto takePhoto={takePhoto} />
+        </CameraTextStyledWrapper>
+      </DivMain>
+    </Background>
   );
 };
-
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['live_photo'])),

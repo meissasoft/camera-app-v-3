@@ -1,26 +1,24 @@
 import styled from '@emotion/styled';
 import { COLORS } from '@/constants/colors';
-
-export const DivMain = styled.div`
+export const Background = styled.div`
   background-color: ${COLORS.BLACK_100};
+  height: 100vh;
+`;
+export const DivMain = styled.div`
   height: calc(100vh - 40px);
   @media (max-height: 720px) {
-    height: calc(100vh - 58px);
+    height: calc(100vh - 110px);
   }
   @media (max-height: 670px) {
     height: calc(100vh - 40px);
   }
-  padding: 20px;
+  padding: 1px 20px 20px 20px;
   position: relative;
 `;
-
-export const CameraStyled = styled.div`
-  padding: 20px 0px;
-`;
-
+export const CameraStyled = styled.div``;
 export const DivCameraBox = styled.video`
   position: relative;
-  margin: 152px auto auto auto;
+  margin: 110px  auto auto auto;
   width: 320px;
   height: 340px;
   border-radius: 268px;
@@ -29,17 +27,15 @@ export const DivCameraBox = styled.video`
   justify-content: center;
   object-fit: cover;
   background: ${COLORS.BLACK_200}
-
   border-color: ${COLORS.WHITE_200};
   @media (max-width: 500px) {
     width: 327px;
     height: 340px;
   }
   @media (max-width: 370px) {
-    width: 270px;
-    height: 270px;
+    width: 300px;
+    height: 300px;
   }
-
   @media (max-width: 330px) {
     width: 240px;
     height: 240px;
@@ -49,7 +45,6 @@ export const DivCameraBox = styled.video`
     height: 270px;
   }
 `;
-
 export const DivVideoBox = styled.video`
   position: absolute;
   box-sizing: border-box;
@@ -59,43 +54,36 @@ export const DivVideoBox = styled.video`
   flex-direction: column;
   width: 120px;
   height: 140px;
-  margin-left: 53%;
+  margin-left: 55%;
   margin-top: -450px;
   border: 1.5px solid ${COLORS.WHITE_200};
   border-radius: 12px;
   object-fit: cover;
-
   @media (max-width: 500px) {
-    margin-top: -450px;
+    margin-top: -420px;
     margin-left: 54%;
   }
-
   @media (max-width: 474px) {
-    margin-top: -450px;
+    margin-top: -400px;
     margin-left: 55%;
   }
-
   @media (max-width: 371px) {
-    margin-top: -385px;
-    margin-left: 48%;
+    margin-top: -380px;
+    margin-left: 51%;
   }
-
   @media (max-width: 331px) {
     margin-top: -355px;
     margin-left: 44%;
   }
-
   @media (max-width: 293px) {
     margin-top: -355px;
     margin-left: 43%;
   }
-
   @media (max-height: 668px) {
-    margin-top: -380px;
+    margin-top: -400px;
     margin-left: 49%;
   }
 `;
-
 export const Video = styled.video`
   width: 100%;
   height: 100%;
@@ -103,11 +91,9 @@ export const Video = styled.video`
     object-fit: cover;
   }
 `;
-
 export const Canvas = styled.canvas`
   display: none;
 `;
-
 export const CameraTextStyledWrapper = styled.div`
   display: flex;
   justify-content: center;
