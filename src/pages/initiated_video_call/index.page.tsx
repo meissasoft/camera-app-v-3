@@ -1,6 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { detect } from 'detect-browser';
-
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import router from 'next/router';
 import { useUserMedia } from '@/hooks/useUserMedia';
@@ -14,13 +12,11 @@ import { DivCameraBox, DivFrontCam, DivMain, DivFrontCamContainer, DivTextStyled
  */
 
 const InitiatedVideoCall = () => {
-  const browser = detect();
-
   const front = {
     audio: true,
     video: { facingMode: 'user' }, // change to user for front camera
   };
-  console.log('browser', browser);
+
   const videoRefFront: any = useRef(null);
   const videoRefBack: any = useRef(null);
   const mediaStreamFront = useUserMedia(front, false);
@@ -30,33 +26,53 @@ const InitiatedVideoCall = () => {
   const blobsRecordedBack: any = [];
 
   useEffect(() => {
-    if (mediaStreamFront && videoRefFront.current && !videoRefFront.current.srcObject && browser) {
+    if (mediaStreamFront && videoRefFront.current && !videoRefFront.current.srcObject) {
       videoRefFront.current.setAttribute('autoplay', '');
       videoRefFront.current.setAttribute('muted', '');
       videoRefFront.current.setAttribute('playsinline', '');
       videoRefFront.current.srcObject = mediaStreamFront;
       videoRefFront.current.play();
-      mediaRecorderFront.current = new MediaRecorder(mediaStreamFront, {
-        mimeType: browser.name === 'chrome' ? 'video/webm' : 'video/mp4',
-      });
-      mediaRecorderFront.current.start(1000);
-      mediaRecorderFront.current.addEventListener('dataavailable', function (e: any) {
-        blobsRecordedFront.push(e.data);
-      });
+      try {
+        mediaRecorderFront.current = new MediaRecorder(mediaStreamFront, {
+          mimeType: 'video/webm',
+        });
+        mediaRecorderFront.current.start(1000);
+        mediaRecorderFront.current.addEventListener('dataavailable', function (e: any) {
+          blobsRecordedFront.push(e.data);
+        });
+      } catch (exe) {
+        mediaRecorderFront.current = new MediaRecorder(mediaStreamFront, {
+          mimeType: 'video/mp4',
+        });
+        mediaRecorderFront.current.start(1000);
+        mediaRecorderFront.current.addEventListener('dataavailable', function (e: any) {
+          blobsRecordedFront.push(e.data);
+        });
+      }
     }
-    if (mediaStreamFront && videoRefBack.current && !videoRefBack.current.srcObject && browser) {
+    if (mediaStreamFront && videoRefBack.current && !videoRefBack.current.srcObject) {
       videoRefBack.current.setAttribute('autoplay', '');
       videoRefBack.current.setAttribute('muted', '');
       videoRefBack.current.setAttribute('playsinline', '');
       videoRefBack.current.srcObject = mediaStreamFront;
       videoRefBack.current.play();
-      mediaRecorderBack.current = new MediaRecorder(mediaStreamFront, {
-        mimeType: browser.name === 'chrome' ? 'video/webm' : 'video/mp4',
-      });
-      mediaRecorderBack.current?.start(1000);
-      mediaRecorderBack.current.addEventListener('dataavailable', function (e: any) {
-        blobsRecordedBack.push(e.data);
-      });
+      try {
+        mediaRecorderBack.current = new MediaRecorder(mediaStreamFront, {
+          mimeType: 'video/webm',
+        });
+        mediaRecorderBack.current.start(1000);
+        mediaRecorderBack.current.addEventListener('dataavailable', function (e: any) {
+          blobsRecordedFront.push(e.data);
+        });
+      } catch (exe) {
+        mediaRecorderBack.current = new MediaRecorder(mediaStreamFront, {
+          mimeType: 'video/mp4',
+        });
+        mediaRecorderBack.current.start(1000);
+        mediaRecorderBack.current.addEventListener('dataavailable', function (e: any) {
+          blobsRecordedBack.push(e.data);
+        });
+      }
     }
   }, [mediaStreamFront]);
 
