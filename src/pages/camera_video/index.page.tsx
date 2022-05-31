@@ -28,14 +28,12 @@ import {
 const Verification = () => {
   const { t } = useTranslation('camera_video');
   const [isDone, setIsDone] = useState<boolean>(false);
-  const [counter, setCounter] = useState<number>(20);
+  const [counter, setCounter] = useState<number>(10);
   const [startRecording, setStartRecording] = useState<boolean>(false);
 
-  const [words, setWords] = useState('');
+  const [words] = useState('');
   const [instruction, setInstruction] = useState<any>(t('position_your_face'));
-  const [description, setDescriptoin] = useState<any>(
-    t(`keep_your_face_within_the_oval_to_start_recording_and_follow_the_instructions`)
-  );
+  const [description, setDescriptoin] = useState<any>(t(`keep_your_face_within_the_oval`));
   const videoRef = useRef(null);
   const mediaRecorder: any = useRef(null);
   const blobsRecorded: any = [];
@@ -112,23 +110,15 @@ const Verification = () => {
   const startVideoRecording = () => {
     setIsDone(false);
     setTimeout(() => {
-      setInstruction(t('instruction_1'));
-      setDescriptoin(t('look_over_your_right_shoulder_and_back'));
+      setInstruction(t('perfect'));
+      setDescriptoin(t('please_capture_your_face'));
     }, 3000);
     setTimeout(faceDone, 8000);
-    setTimeout(stop, 20000);
+    setTimeout(stop, 10000);
   };
 
   const faceDone = () => {
     setIsDone(true);
-    setTimeout(startWord, 2000);
-  };
-
-  const startWord = () => {
-    setIsDone(false);
-    setWords(`3 - 0 - 1 - 4`);
-    setInstruction(t('instruction_2'));
-    setDescriptoin(t('say_each_digit_out_loud'));
   };
 
   const stop = () => {
