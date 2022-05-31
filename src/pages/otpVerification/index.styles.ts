@@ -121,6 +121,6 @@ export const ResendText = styled.span`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 106px;
   width: 100%;
 `;

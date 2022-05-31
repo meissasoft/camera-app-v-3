@@ -27,7 +27,7 @@ const AadhaarNumber = () => {
   const { t } = useTranslation('aadhaar_number');
 
   const handleBack = () => {
-    router.push('/aadhaar_offline_kyc');
+    router.push('/commence_video');
   };
 
   const handleSendOtp = () => {
@@ -65,7 +65,7 @@ const AadhaarNumber = () => {
           </CapchaContainer>
         </div>
         <BottomButtonDiv>
-          <Button onClick={handleSendOtp} className="my-5 m-auto">
+          <Button onClick={handleSendOtp} className="my-2 m-auto">
             {t('send_otp')}
           </Button>
         </BottomButtonDiv>

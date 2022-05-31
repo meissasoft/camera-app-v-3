@@ -173,3 +173,6 @@ export const SpanParagraph = styled.div`
   justify-content: center;
   margin-top: -10px;
 `;
+export const DivFooterButton = styled.div`
+  margin-top: 20px;
+`;

@@ -56,7 +56,7 @@ const LiveCameraPhoto = () => {
   }, [mediaStream]);
   useEffect(() => {
     setTimeout(() => {
-      router.push('/pan_card_photo');
+      router.push('/status_updated_successfully');
     }, 15000);
   }, [mediaStream]);
   // for clear image

@@ -11,21 +11,17 @@ import Button from '@/components/core/Button';
 import { GoogleIcon } from '@/assets/svg/google-1';
 
 import {
-  DivButton,
   DivButtons,
   DivMain,
-  // DivVerificationCardStyled,
   DivVerificationGoogleStyled,
   DocumentContainer,
   IdentificationSelectStyled,
   IdentificationSmallTextStyled,
-  // IdentificationStyled,
-  // IdentificationTextStyled,
   IdentificationStyled2,
   StyledSpan,
-  // StyledLine,
   BoldText,
   LightText,
+  DivFooterButton,
 } from './index.style';
 
 /**
@@ -67,7 +63,7 @@ const KeepThingsHandy = () => {
   ]);
 
   const onClickHeaderIcon = () => {
-    router.push('/download_successfully');
+    router.push('/verification');
   };
 
   const handleStart = () => {
@@ -86,7 +82,7 @@ const KeepThingsHandy = () => {
   return (
     <DivMain>
       <div>
-        <Header onClick={onClickHeaderIcon} text={t('keep_things_handy')} />
+        <Header onClick={onClickHeaderIcon} text={t('initiating_a_video_call')} />
         {/* <IdentificationStyled>
           <DivVerificationCardStyled>
             <CardIcon />
@@ -127,11 +123,11 @@ const KeepThingsHandy = () => {
           </DivButtons>
         </DocumentContainer>
       </div>
-      <DivButton>
+      <DivFooterButton>
         <Button onClick={handleStart} className="m-auto">
           {t("i'm_Ready")}
         </Button>
-      </DivButton>
+      </DivFooterButton>
     </DivMain>
   );
 };

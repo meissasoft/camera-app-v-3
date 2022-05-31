@@ -14,8 +14,8 @@ export const DivMain = styled.div`
   }
 `;
 export const TokenHeading = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 `;
 export const TokenNumberDiv = styled.div`
   font-style: normal;

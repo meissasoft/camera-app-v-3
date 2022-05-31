@@ -32,10 +32,16 @@ const Verification = () => {
 
   const onClickHeaderIcon = () => {
     if (verificationStep === 2) {
-      router.push('/aadhaar_card');
+      router.push('/pan_card');
       return;
     }
-    router.push('/otpVerification');
+
+    if (verificationStep === 3) {
+      router.push('/video_screen');
+      return;
+    }
+
+    router.push('/download_successfully');
   };
 
   const goToVideo = () => {
@@ -77,7 +83,6 @@ const Verification = () => {
           isDisabled={verificationStep === 2 || verificationStep === 3 ? false : true}
           onClick={goToVideo}
         />
-        {/* //to be added in translation */}
         <StepLayout
           rightIcon="arrow"
           step={t('step3')}

@@ -21,7 +21,7 @@ const VideoScreen = () => {
   const { recordedVideo } = useAppSelector(getAppDataSelector);
 
   const onClickHeaderIcon = () => {
-    router.push('/verification');
+    router.push('/camera_video');
   };
   const handleContinue = () => {
     dispatch(setVerificationStep(3));
