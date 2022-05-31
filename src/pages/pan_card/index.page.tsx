@@ -15,7 +15,7 @@ import { DivBottom, DivCard, DivHomeButton, DivMain } from './index.styles';
  * @returns AadhaarCard page
  */
 
-const AadhaarCard = () => {
+const PanCard = () => {
   const { cardFront, cardBack } = useAppSelector(getAppDataSelector);
   const dispatch = useAppDispatch();
 
@@ -56,4 +56,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default AadhaarCard;
+export default PanCard;

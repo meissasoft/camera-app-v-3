@@ -21,5 +21,5 @@ export const DivBottom = styled.div`
 `;
 export const DivHomeButton = styled.div`
   width: 100%;
-  margin-top: 20px;
+  margin-top: 80px;
 `;
