@@ -6,7 +6,7 @@ export const DivMain = styled.div`
   background: ${COLORS.BLACK_200};
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 `;
 
 export const DivTextStyled = styled.div`
