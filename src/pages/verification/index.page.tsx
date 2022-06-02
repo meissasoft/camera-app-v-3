@@ -10,7 +10,7 @@ import StepLayout from '@/components/StepsLayout';
 import { useAppSelector } from '@/hooks/useReduxTypedHooks';
 import { getAppDataSelector } from '@/store/app';
 
-import MyVerticallyCenteredModal from '@/components/core/identify_document_modal';
+import MyVerticallyCenteredModal from '@/components/IdentifyDocumentModal';
 import {
   DivMain,
   VerificationCardStyled,

@@ -11,9 +11,9 @@ import Button from '@/components/core/Button';
 import { GoogleIcon } from '@/assets/svg/google-1';
 
 import {
+  DivFooterButton,
   DivButtons,
   DivMain,
-  DivVerificationGoogleStyled,
   DocumentContainer,
   IdentificationSelectStyled,
   IdentificationSmallTextStyled,
@@ -21,7 +21,7 @@ import {
   StyledSpan,
   BoldText,
   LightText,
-  DivFooterButton,
+  DivVerificationGoogleStyled,
 } from './index.style';
 
 /**
@@ -83,19 +83,7 @@ const KeepThingsHandy = () => {
     <DivMain>
       <div>
         <Header onClick={onClickHeaderIcon} text={t('initiating_a_video_call')} />
-        {/* <IdentificationStyled>
-          <DivVerificationCardStyled>
-            <CardIcon />
-          </DivVerificationCardStyled>
-          <IdentificationTextStyled>
-            <LightText>{t('please_keep_handy_your')}</LightText> <BoldText>{t('pan_card_blank_paper')}</BoldText>{' '}
-            <LightText> {t('and')}</LightText>
-            &nbsp;
-            <BoldText>{t('pen')}</BoldText>
-          </IdentificationTextStyled>
-        </IdentificationStyled> */}
         <DocumentContainer>
-          {/* <StyledLine /> */}
           <DivVerificationGoogleStyled>
             <GoogleIcon />
           </DivVerificationGoogleStyled>
