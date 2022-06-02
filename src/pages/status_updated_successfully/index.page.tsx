@@ -23,7 +23,7 @@ import {
  * @returns status_updated_successfully page
  */
 const onClickHeaderIcon = () => {
-  router.push('/signature_captured');
+  router.push('/live_photo');
 };
 
 const StatusUpdatedSuccessfully = () => {
