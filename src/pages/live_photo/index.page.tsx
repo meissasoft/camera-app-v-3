@@ -4,13 +4,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useUserMedia } from '@/hooks/useUserMedia';
 import BottomTextLivePhoto from '@/components/LivePhotoBottom';
 import {
-  Background,
   Canvas,
   DivCameraBox,
   DivMain,
-  DivVideoBox,
-  CameraStyled,
+  DivAgentBox,
+  CameraAgentStyled,
   CameraTextStyledWrapper,
+  DivCameraBoxWrapper,
 } from './index.style';
 /**
  *
@@ -26,6 +26,15 @@ const LiveCameraPhoto = () => {
   const videoRef = useRef(null) as any;
   const videoRef1 = useRef(null) as any;
   const photoRef = useRef(null) as any;
+
+  const turnOffCamera = () => {
+    if (mediaStream) {
+      mediaStream?.getTracks().forEach((track) => {
+        track.stop();
+      });
+    }
+  };
+
   const takePhoto = () => {
     const width = 314;
     const height = width / (16 / 9);
@@ -38,6 +47,7 @@ const LiveCameraPhoto = () => {
     const dataUrl = photo.toDataURL();
     console.log('dataUrl', dataUrl);
   };
+
   useEffect(() => {
     if (mediaStream && videoRef.current && !videoRef.current.srcObject) {
       videoRef.current.setAttribute('autoplay', '');
@@ -54,29 +64,27 @@ const LiveCameraPhoto = () => {
       videoRef1.current.play();
     }
   }, [mediaStream]);
+
   useEffect(() => {
+    turnOffCamera();
     setTimeout(() => {
       router.push('/status_updated_successfully');
-    }, 15000);
-  }, [mediaStream]);
-  // for clear image
-  // function handleClear() {
-  //   const context = photoRef.current.getContext('2d');
-  //   context.clearRect(0, 0, photoRef.current.width, photoRef.current.height);
-  // }
+    }, 10000);
+  }, []);
+
   return (
-    <Background>
-      <DivMain>
-        <CameraStyled>
-          <DivCameraBox ref={videoRef}></DivCameraBox>
-          <Canvas ref={photoRef}></Canvas>
-          <DivVideoBox ref={videoRef1} />
-        </CameraStyled>
-        <CameraTextStyledWrapper>
-          <BottomTextLivePhoto takePhoto={takePhoto} />
-        </CameraTextStyledWrapper>
-      </DivMain>
-    </Background>
+    <DivMain>
+      <DivAgentBox>
+        <Canvas ref={photoRef}></Canvas>
+        <CameraAgentStyled ref={videoRef1} />
+      </DivAgentBox>
+      <DivCameraBoxWrapper>
+        <DivCameraBox ref={videoRef}></DivCameraBox>
+      </DivCameraBoxWrapper>
+      <CameraTextStyledWrapper>
+        <BottomTextLivePhoto takePhoto={takePhoto} />
+      </CameraTextStyledWrapper>
+    </DivMain>
   );
 };
 export const getStaticProps = async ({ locale }: { locale: string }) => ({

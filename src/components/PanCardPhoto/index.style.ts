@@ -2,9 +2,6 @@ import styled from '@emotion/styled';
 import { COLORS } from '@/constants/colors';
 
 export const DivCameraTextStyled = styled.div`
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -21,6 +18,7 @@ export const CameraTextStyled = styled.div`
   width: 80%;
   text-align: center;
 `;
+
 export const IconContainer = styled.span`
   margin-top: 9px;
 `;

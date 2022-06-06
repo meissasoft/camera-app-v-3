@@ -1,100 +1,64 @@
 import styled from '@emotion/styled';
 import { COLORS } from '@/constants/colors';
-export const Background = styled.div`
-  background-color: ${COLORS.BLACK_100};
-  height: 100vh;
-`;
 export const DivMain = styled.div`
-  height: calc(100vh - 40px);
-  @media (max-height: 720px) {
-    height: calc(100vh - 110px);
-  }
-  @media (max-height: 670px) {
-    height: calc(100vh - 40px);
-  }
-  padding: 1px 20px 20px 20px;
-  position: relative;
+  background-color: black;
+  height: 100vh;
+  padding: 20px 0px 0px 0px;
 `;
-export const CameraStyled = styled.div``;
-export const DivCameraBox = styled.video`
-  position: relative;
-  margin: 110px  auto auto auto;
-  width: 320px;
-  height: 340px;
-  border-radius: 268px;
-  border-style: dashed;
-  display: flex;
-  justify-content: center;
-  object-fit: cover;
-  background: ${COLORS.BLACK_200}
-  border-color: ${COLORS.WHITE_200};
-  @media (max-width: 500px) {
-    width: 327px;
-    height: 340px;
-  }
-  @media (max-width: 370px) {
-    width: 300px;
-    height: 300px;
-  }
-  @media (max-width: 330px) {
-    width: 240px;
-    height: 240px;
-  }
-  @media (max-height: 667px) {
-    width: 270px;
-    height: 270px;
-  }
+export const DivAgentBox = styled.div`
+  position: fixed;
+  padding: 40px;
+  top: 0%;
+  width: 100%;
+  z-index: 2;
 `;
-export const DivVideoBox = styled.video`
-  position: absolute;
+export const CameraAgentStyled = styled.video`
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: end
-  flex-direction: column;
-  width: 120px;
-  height: 140px;
-  margin-left: 55%;
-  margin-top: -450px;
-  border: 1.5px solid ${COLORS.WHITE_200};
+  width: 30%;
+  height: 17%;
+  border: 1.5px solid #ffffff;
   border-radius: 12px;
   object-fit: cover;
-  @media (max-width: 500px) {
-    margin-top: -420px;
-    margin-left: 54%;
-  }
-  @media (max-width: 474px) {
-    margin-top: -400px;
-    margin-left: 55%;
-  }
-  @media (max-width: 371px) {
-    margin-top: -380px;
-    margin-left: 51%;
-  }
-  @media (max-width: 331px) {
-    margin-top: -355px;
-    margin-left: 44%;
-  }
-  @media (max-width: 293px) {
-    margin-top: -355px;
-    margin-left: 43%;
-  }
-  @media (max-height: 668px) {
-    margin-top: -400px;
-    margin-left: 49%;
-  }
+  left: 75%;
+  position: fixed;
+  transform: translate(-50%);
+  object-fit: cover;
 `;
-export const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  @media (max-width: 436px) {
-    object-fit: cover;
-  }
+
+export const DivCameraBoxWrapper = styled.div`
+  position: fixed;
+  padding: 2em;
+  left: 0%;
+  width: calc(100vw - 5%);
+  height: calc(100vh - 10%);
+  transform: translateX(2%);
+  z-index: 1;
 `;
+
 export const Canvas = styled.canvas`
   display: none;
+`;
+export const DivCameraBox = styled.video`
+  background: ${COLORS.BLACK_200};
+  border-color: ${COLORS.WHITE};
+  box-sizing: border-box;
+  width: 90%;
+  height: 49%;
+  border-radius: 50%;
+  border-style: dashed;
+  background: ${COLORS.BLACK_200};
+  border-style: dashed;
+  position: fixed;
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%);
+  z-index: 1;
+  object-fit: inherit;
 `;
 export const CameraTextStyledWrapper = styled.div`
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
 `;

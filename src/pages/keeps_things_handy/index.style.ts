@@ -2,17 +2,14 @@ import styled from '@emotion/styled';
 import { COLORS } from '@/constants/colors';
 
 export const DivMain = styled.div`
-  padding: 20px;
-  height: calc(100vh - 40px);
-  @media (max-height: 720px) {
-    height: calc(100vh - 100px);
-  }
-  @media (max-height: 670px) {
-    height: calc(100vh - 40px);
-  }
+  margin: 20px 20px 0px 20px;
+  height: calc(100vh - 20px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  -webkit-animation: fadeInUp 500ms ease-in-out; /* Chrome, Safari, Opera */
+  animation: fadeInUp 500ms ease-in-out;
+
   .btn {
     width: 100%;
     height: 30px;
@@ -124,7 +121,14 @@ export const DocumentContainer = styled.div`
 export const DivDifference = styled.div`
   margin-top: 45px;
 `;
-export const DivButton = styled.div``;
+export const DivFooterButton = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  padding-bottom: 22px;
+`;
 export const DivVerificationCardStyled = styled.div`
   display: flex;
   align-items: center;
@@ -172,7 +176,4 @@ export const SpanParagraph = styled.div`
   gap: 5px;
   justify-content: center;
   margin-top: -10px;
-`;
-export const DivFooterButton = styled.div`
-  margin-top: 20px;
 `;
