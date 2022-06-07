@@ -8,7 +8,7 @@ import Header from '@/components/core/Header';
 import { useAppDispatch, useAppSelector } from '@/hooks/useReduxTypedHooks';
 import { getAppDataSelector, setVerificationStep } from '@/store/app';
 
-import { DivBottom, DivMain, VideoCardStyled, VideoCardText } from './index.style';
+import { DivBottom, DivMain, VideoCardStyled, VideoCardText, StyledRetake } from './index.style';
 
 /**
  *
@@ -49,7 +49,7 @@ const VideoScreen = () => {
           {t('submit_video')}
         </Button>
         <Button className="mx-auto btn" onClick={handleRetake} isTransparent>
-          <span className="text">{t('re_take_video')}</span>
+          <StyledRetake>{t('re_take_video')}</StyledRetake>
         </Button>
       </DivBottom>
     </DivMain>

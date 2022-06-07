@@ -95,6 +95,7 @@ const Reshedule = () => {
             <span>{selectedOption}</span>
             <span>{!dropDownOpen ? <ArrowBotom /> : <ArrowTop />}</span>
           </DefaultOptionDiv>
+
           <>
             {dropDownOpen && (
               <OptionsListDiv>

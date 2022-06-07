@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
 export const DivMain = styled.div`
-  padding: 20px;
+  margin: 20px 20px 0px 20px;
+  height: calc(100vh - 20px);
+  -webkit-animation: fadeInUp 500ms ease-in-out; /* Chrome, Safari, Opera */
+  animation: fadeInUp 500ms ease-in-out;
 `;
-export const VerificationStyled = styled.div`
-  padding: 20px 0px;
-  list-group-item: list-group-item-action;
-`;
+export const VerificationStyled = styled.div``;
 export const VerificationCardStyled = styled.div`
   text-align: center;
 `;

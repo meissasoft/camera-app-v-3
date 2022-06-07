@@ -6,7 +6,7 @@ import { BodyModalStyled, IineModel, ParagraphModel, ParagraphTextModel, CenterM
 
 /**
  *
- * @returns Verification document page
+ * @returns MyVerticallyCenteredModal
  */
 
 interface Props {

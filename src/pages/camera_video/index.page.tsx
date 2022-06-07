@@ -14,18 +14,19 @@ import {
   DiveDone,
   DivMain,
   DivWords,
-  VerificationSmallTextStyled,
-  VerificationStyled,
-  VerificationTextStyled,
+  SmallTextStyled,
+  DivVideoStyled,
+  TextStyled,
   Video,
+  DivFlex,
 } from './index.styles';
 
 /**
  *
- * @returns Verification page
+ * @returns Camera Video Page
  */
 
-const Verification = () => {
+const CameraVideo = () => {
   const { t } = useTranslation('camera_video');
   const [isDone, setIsDone] = useState<boolean>(false);
   const [counter, setCounter] = useState<number>(10);
@@ -75,6 +76,7 @@ const Verification = () => {
         });
     }
   };
+
   useEffect(() => {
     getVideo();
   }, [videoRef]);
@@ -134,24 +136,26 @@ const Verification = () => {
 
   return (
     <DivMain>
-      <VerificationStyled>
+      <DivVideoStyled>
         <DivCameraBox background={isDone}>
           <Video ref={videoRef} isDone={isDone} muted></Video>
           <DiveDone>{isDone && <DoneIcon />}</DiveDone>
         </DivCameraBox>
-        <VerificationTextStyled>{instruction}</VerificationTextStyled>
-        <VerificationSmallTextStyled>{description}</VerificationSmallTextStyled>
+        <TextStyled>{instruction}</TextStyled>
+        <SmallTextStyled>{description}</SmallTextStyled>
         <DivWords>{words.length > 0 && words}</DivWords>
-      </VerificationStyled>
-      <CameraBottomWithButton
-        isVideo
-        onClick={handleOnClick}
-        onCancel={handleCancel}
-        onReTake={handleRetake}
-        counter={`00:00:${counter}`}
-        cancel={t('cancel')}
-        retake={t('retake')}
-      />
+      </DivVideoStyled>
+      <DivFlex>
+        <CameraBottomWithButton
+          isVideo
+          onClick={handleOnClick}
+          onCancel={handleCancel}
+          onReTake={handleRetake}
+          counter={`00:00:${counter}`}
+          cancel={t('cancel')}
+          retake={t('retake')}
+        />
+      </DivFlex>
     </DivMain>
   );
 };
@@ -162,4 +166,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default Verification;
+export default CameraVideo;
